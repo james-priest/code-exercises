@@ -1,0 +1,31 @@
+{
+  "name": "code-exercises",
+  "version": "1.0.0",
+  "description": "Exercises, type-alongs, & proof of concepts from various books, labs, tutorials, blog posts and online courses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/flow-remove-types javascript_exercises/flow/src -d javascript_exercises/flow/lib",
+    "prepublish": "npm run build",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/james-priest/code-exercises.git"
+  },
+  "keywords": [],
+  "author": "James Priest",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/james-priest/code-exercises/issues"
+  },
+  "homepage": "https://github.com/james-priest/code-exercises#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "flow-bin": "^0.50.0",
+    "flow-remove-types": "^1.2.1"
+  }
+}
