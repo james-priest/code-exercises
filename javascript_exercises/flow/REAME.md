@@ -14,6 +14,12 @@ I also installed `flow-bin` and `flow-remove-types` as dev dependencies.
 
 Lastly I installed VSCode Flow Language Support extension
 
+These are the test scenarios used:
+
+* added `.jshintrc` in `./src` directory to test JSHint
+* added `.eslintrc.js` in `./src` directory with `"extends": "airbnb-base"` option configured to test AirBnB Style Guide recommendations
+* added `.flowconfig` with `eslint-config-airbnb-base` and other dependency packages set-up in `package.json` in project root so that AirBnB could work with and extend ESLint
+
 ## Conclusion
 
 Next step is to try TypeScript and Babel to see how they compare.

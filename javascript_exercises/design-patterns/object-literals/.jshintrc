@@ -1,7 +1,7 @@
 {
   "extends": "c:\\Users\\James\\.jshintrc",
   // Environments
-  "devel": true,  // set to false for production env
+  //"devel": false,  // set to false for production env
   // Custom Globals
   "globals": {
     "test": false,

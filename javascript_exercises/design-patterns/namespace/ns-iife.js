@@ -23,7 +23,7 @@ var myApp = myApp || {};
     var ns = this.myApp;            // assign ns as an alias
 
     var vehicleCount = 5;           // private
-    var vehicles = new Array();     // private
+    var vehicles = [];     // private
 
     ns.Car = function () { };       // public
     ns.Truck = function () { };     // public
@@ -44,8 +44,8 @@ var myApp = myApp || {};
     this.myApp = this.myApp || {};  // Singleton Pattern
     var ns = this.myApp;            // assign ns as a shorthand
 
-    var _vehicleCount = 5;           // private
-    var _vehicles = new Array();     // private
+    var _vehicleCount = 5;          // private
+    var _vehicles = [];             // private
 
     ns.Car = function () { };       // public
     ns.Truck = function () { };     // public
