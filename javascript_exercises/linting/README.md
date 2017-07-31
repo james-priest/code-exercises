@@ -1,10 +1,10 @@
 # JSLint, JSHint, & ESLint
 
-Installed, configured & tested each of these linters
+Installed, configured, & tested each of these linters. Followed blog post [JS Static Analysis Part 2 - Linting with JSLint, JSHint, & ESLint](https://mdcox.net/posts/static-checking-jslint-jshint-eslint.html "By Michael Cox") by Michael Cox
 
 ## JSLint
 
-This is the granddaddy of them all and was originally written by Douglas Crockford in 2002 with the latest stable version released in 2011. It offers no config and is highly opinionated as to what "The Good Parts" are. See [JavaScript: The Good Parts](). Still, this is the staple linter to use if you are just starting out and want to see where it all began. Simple install. No configuration needed.
+This is the granddaddy of them all and was originally written by Douglas Crockford in 2002 with the latest stable version released in 2011. It offers no config and is highly opinionated as to what "The Good Parts" are. See [JavaScript: The Good Parts](http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf "Book in pdf"). Still, this is the staple linter to use if you are just starting out and want to see where it all began. Simple install. No configuration needed.
 
 * performed a global install
   * `npm install -g jslint@latest`
