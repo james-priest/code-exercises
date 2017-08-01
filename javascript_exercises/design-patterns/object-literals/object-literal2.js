@@ -23,4 +23,4 @@ var runApp = {
 
 runApp.init();  // We call init() in order for the code to execute
 
-// The other option is to use an IIFE - see global-instance.js
+// The other option is to use an IIFE - see global-instance-iife.js
