@@ -32,8 +32,9 @@ This is the third linter in the series and was developed in 2013 by Nicholas C. 
 
 * installed globally and as a dev dependency
   * `npm install -g eslint@latest`
+  * `npm install -g eslint-plugin-html`
   * `npm install eslint@latest --save-dev`
-* created `.eslintrc.json` in script `./src` directory and a global config in my home directory
+* created `.eslintrc.json` in `./javascript_exercises/flow/src` & `./javascript_exercises/linting` directory and a global config in my home directory
   * `eslint --init`
 * run
   * `eslint a.js`

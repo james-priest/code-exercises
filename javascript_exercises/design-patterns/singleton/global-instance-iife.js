@@ -5,7 +5,8 @@
  */
 
 // With JavaScript, singletons serve as a namespace provider
-// which isolate implementation code from the global namespace so-as to provide // a single point of access for functions.
+// which isolate implementation code from the global namespace so-as to provide
+// a single point of access for functions.
 
 var mySingleton2 = (function () {
     // Instance stores a reference to the Singleton

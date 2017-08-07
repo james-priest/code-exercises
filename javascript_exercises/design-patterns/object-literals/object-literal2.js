@@ -23,4 +23,4 @@ var runApp = {
 
 runApp.init();  // We call init() in order for the code to execute
 
-// The other option is to use an IIFE - see global-instance-iife.js
+// The other option is to use an IIFE - see ../singleton/global-instance-iife.js
