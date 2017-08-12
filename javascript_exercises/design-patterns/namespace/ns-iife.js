@@ -23,7 +23,7 @@ var myApp = myApp || {};
     var ns = this.myApp;            // assign ns as an alias
 
     var vehicleCount = 5;           // private
-    var vehicles = [];     // private
+    var vehicles = [];              // private
 
     ns.Car = function () { };       // public
     ns.Truck = function () { };     // public

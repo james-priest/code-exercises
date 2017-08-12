@@ -1,7 +1,7 @@
 /**
  * Scope chain in closure
- * from http://jstherightway.org/
- * YouTube video: Arindam Paul - JavaScript VM Internals, Eventloop, Async and * Scopechains
+ * from http://jstherightway.org/#must-see
+ * YouTube video: Arindam Paul - JavaScript VM Internals, Event Loop, Async and Scope Chains
  * 
  */
 

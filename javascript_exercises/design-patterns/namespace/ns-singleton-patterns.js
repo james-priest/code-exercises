@@ -3,6 +3,8 @@
  * or combining Singleton and Namespace Patterns
  * Remember, a Singleton allows for one (and only one) instance of an
  * object to be created.
+ *
+ * Taken from https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailnamespacing
  */
 
 // Option 1
