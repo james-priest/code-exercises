@@ -4,11 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome",
-            "url": "http://localhost:8887",
+            // "url": "http://localhost:8887", // Web Server for Chrome
+            "url": "http://localhost:8000", // Node.js http server
             "webRoot": "${workspaceRoot}/html_exercises/index.html"
         },
         {
