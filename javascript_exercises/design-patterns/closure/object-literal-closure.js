@@ -21,7 +21,7 @@ var user = {
     sayName: function () {
         return "Hi my name is " + this.firstName + " " + this.lastName + " and I have a joke.";
     },
-    sgetJokeSetup: function() {
+    getJokeSetup: function() {
         return "What's invisible and smells like carrots...";
     },
     setupPause: function () {

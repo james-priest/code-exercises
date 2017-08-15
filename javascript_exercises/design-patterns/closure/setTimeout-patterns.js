@@ -7,14 +7,14 @@
 // 1. IIFE - GOOD:
 var reps = 3;
 
-// (function doStuff() {
-//     if (reps == 0)
-//         return;
-//     console.log(reps);
+(function doStuff() {
+    if (reps == 0)
+        return;
+    console.log(reps);
 
-//     reps--;
-//     setTimeout(doStuff, 1000);
-// })();
+    reps--;
+    setTimeout(doStuff, 1000);
+})();
 
 // 2. obj lit - BAD:
 var obj = {
@@ -59,7 +59,7 @@ var obj2 = {
 // var inst = obj2;
 // inst.repeat();
 
-// 3. 
+// 3. Function expression
 var myFunc = function () {
     
     var outer = 3;
@@ -80,7 +80,7 @@ var myFunc = function () {
     }
 
     doStuff();
-    return "done"; // occurs after first inner & outer loop completes. replace with async?
+    return "done"; // occurs after first loop completes. Use Async?
 };
 
 var doIt = myFunc();
