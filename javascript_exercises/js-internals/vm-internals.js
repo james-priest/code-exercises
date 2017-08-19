@@ -1,4 +1,5 @@
-/** 
+/* eslint-disable */
+/**
  * JavaScript VM Internals
  * http://jstherightway.org/#must-see
  */
