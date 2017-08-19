@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS3 box-model</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body {margin: 20px; background-color: #ddd; color: #333}
+            .box {
+                background: grey;
+                height: 100px;
+                /* content-box is default. only includes*/
+                border: 2px solid black;
+                margin: 20px;
+                padding: 10px;
+                width: 300px;
+            }
+            .content-box {
+                box-sizing: content-box;
+            }
+           .padding-box {
+                box-sizing: padding-box;
+            }
+            .border-box {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <p><code>box-model: <b>content-box</b></code></p>
+        <div class="box content-box"> <h3>300px + 20px + 4px = 324px</h3></div>
+        <p><code>box-model: <b>padding-box</b></code></p>
+        <div class="box padding-box"> <h3>300px + 20px + 4px = 324px</h3></div>
+        <p><code>box-model: <b>border-box</b></code></p>
+        <div class="box border-box"> <h3>300px + 20px + 4px = 324px</h3></div>
+    </body>
+</html>

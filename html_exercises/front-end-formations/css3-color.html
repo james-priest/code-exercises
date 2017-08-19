@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS3 color</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body {margin: 20px; background-color: #ddd; color: #333}
+            .box {
+                /* background: grey; */
+                height: 260px;
+                /* content-box is default. only includes*/
+                border: 2px solid black;
+                margin: 20px;
+                padding: 10px;
+                width: 400px;
+            }
+            .content-box {
+                box-sizing: content-box;
+                background: radial-gradient(ellipse at top left, aqua, blue);
+                width:260px;
+                border-radius: 50%;
+                text-align: center;
+            }
+            .border-box {
+                box-sizing: border-box;
+                background: linear-gradient(to bottom, red, yellow);
+                background:
+                    url(images/bg3.jpg) top left no-repeat,
+                    url(images/bg2.jpg) center right no-repeat,
+                    linear-gradient(to bottom, red, yellow);
+            }
+            h3 { color: rgba(0, 0, 0, 0.25); } /* 0.25% opaque */
+            h2 { color: hsla(240, 100%, 50%, 0.75); }
+        </style>
+    </head>
+    <body>
+        <p><code>box-model: <b>content-box</b></code></p>
+        <div class="box content-box"><h3>Hello there</h3></div>
+        <p><code>box-model: <b>border-box</b></code></p>
+        <div class="box border-box"><h2>Hello there</h2></div>
+    </body>
+</html>

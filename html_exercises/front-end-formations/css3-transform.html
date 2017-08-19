@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS3 Transform</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            h1 { box-shadow: 
+                    0px 1px 0px #ccc,
+                    0px 2px 0px #666; }
+
+            h2 { border: 1px gray dashed; }
+            .translate { transform: translate(20px, 10px); display:inline-block; }
+            .rotate { transform: rotate(10deg); display:inline-block; };
+            .scale { transform: scale(1.2); }
+            .skewX { transform: skewX(30deg); display: inline-block }
+            .skewY { transform: skewY(-30deg); display: inline-block }
+            .skew { transform: skew(-10deg, 40deg); display: inline-block; margin: 0 0 0 550px; width: 220px; }
+        </style>
+    </head>
+    <body>
+        <h1>Transform:</h1>
+        <ul>
+            <li>transform: translate()</li>
+            <li>transform: rotate()</li>
+            <li>transform: scale()</li>
+            <li>transform: skew()</li>
+        </ul>
+        <h2>No transform</h2>
+
+        <h2 class="translate">Translate --- h2 { transform: translate(20px, 10px); }</h2>
+
+        <h2>No transform</h2>
+
+        <h2 class="rotate">Rotate --- h2 { transform: rotate(10deg); }</h2>
+
+        <h2>No transform</h2>
+
+        <h2 class="scale">Scale --- h2 { transform: scale(1.2); }</h2>
+
+        <h2>No transform</h2>
+
+        <h2 class="skewX">1. SkewX --- h2 { transform: skewX(30deg); }</h2><br />
+
+        <h2 class="skewY">2. SkewY --- h2 { transform: skewY(-30deg); }</h2><br>
+        
+        <h2 class="skew">3. Skew --- h2 { transform: skew(-10deg, 40deg); }</h2>
+
+    </body>
+</html>

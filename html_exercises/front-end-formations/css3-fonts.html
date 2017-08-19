@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS3 Fonts</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Courgette'); 
+            @font-face {
+                font-family: 'OpenSansRegular';
+                src: url('fonts/OpenSans-Light-webfont.woff');
+                /* We'll have to specify multiple fonts which can be added with url()'s */
+                font-style: normal;
+                font-weight: normal;
+            }
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            h1 { box-shadow: 
+                    0px 1px 0px #ccc,
+                    0px 2px 0px #666; }
+            .Courgette {
+                font-family: 'Courgette';
+            }
+            .OpenSansRegular {
+                font-family: 'OpenSansRegular', Arial, Helvetica, sans-serif;
+                /* font-weight: bold; */
+                /* font-style: italic; */
+            }
+            /* h2 { border: 1px gray dashed; }
+            .translate { transform: translate(20px, 10px); display:inline-block; }
+            .rotate { transform: rotate(20deg); display:inline-block; };
+            .scale { transform: scale(1.2); }
+            .skewX { transform: skewX(30deg); display: inline-block }
+            .skewY { transform: skewY(-40deg); display: inline-block }
+            .skew { transform: skew(-10deg, 40deg); display: inline-block } */
+        </style>
+    </head>
+    <body>
+        <h1 class="Courgette">Font Face</h1>
+
+        <h2 class="Courgette">Almost before we knew it - font-family: 'Courgette'</h1>
+
+        <h2 class="OpenSansRegular">Almost before we knew it - font-family: 'OpenSansLight'</h2>
+
+        <h2>Almost before we knew it - font-family: 'Segoe UI'</h2>
+
+        <hr>
+
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS3 Transition</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 20px; background-color: #ddd; color: #333
+            }
+            h1 { box-shadow: 
+                    0px 1px 0px #ccc,
+                    0px 2px 0px #666; }
+            .box {
+                background: grey;
+                height: 50px;
+                width: 300px;
+                margin: 10px;
+                padding: 10px;
+                color: white;
+                border: 1px #999 solid;
+            }
+            .transition1 {
+                background-color: black;
+                transition: background-color 0.2s ease-in-out;
+            }
+            .transition1:hover {
+                background-color: blue;
+            }
+            .transition2 {
+                background-color: white;
+                color: black;
+                transition: all 0.2s ease-in-out;
+            }
+            .transition2:hover {
+                background-color: lightgrey;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Transition</h1>
+        <ul>
+            <li>transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;
+                <ul>
+                    <li>&lt;property&gt; - css propety to transition</li>
+                    <li>&lt;duration&gt; - 2.0s</li>
+                    <li>&lt;timing-function&gt;
+                        <ul>
+                            <li>ease</li>
+                            <li>ease-in</li>
+                            <li>ease-in-out</li>
+                            <li>linear</li>
+                            <li>cubic-bezier</li>
+                            <li>step-start</li>
+                            <li>step-end</li>
+                            <li>steps()</li>
+                        </ul>
+                    </li>
+                    <li>&lt;delay&gt; - 0.2s</li>
+                </ul>
+            </li>
+            <li>Individual transition properties:
+                <ul>
+                    <li>transition-property: background-color;</li>
+                    <li>transition-duration: 0.2s;</li>
+                    <li>transition-timing-function: ease-in-out;</li>
+                    <li>transition-delay: 0.1s</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="box transition1">transition: background-color 1.0s ease-in-out;</div>
+
+        <div class="box transition2">transition: all 0.2s ease-in-out;</div>
+        
+    </body>
+</html>

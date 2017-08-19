@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS3 multiple backgrounds</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body {margin: 20px; background-color: #ddd; color: #333}
+            .box {
+                /* background: grey; */
+                height: 260px;
+                /* content-box is default. only includes*/
+                border: 2px solid black;
+                margin: 20px;
+                padding: 10px;
+                width: 400px;
+            }
+            .content-box {
+                box-sizing: content-box;
+                background-image: url(images/bg3.jpg), url(images/bg2.jpg);
+                background-position: top left, center right;
+                background-repeat: no-repeat, no-repeat;
+            }
+            .border-box {
+                box-sizing: border-box;
+                background: 
+                    url(images/bg3.jpg) top left no-repeat,
+                    url(images/bg2.jpg) center right no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <p><code>box-model: <b>content-box</b></code></p>
+        <div class="box content-box"></div>
+        <p><code>box-model: <b>border-box</b></code></p>
+        <div class="box border-box"></div>
+    </body>
+</html>
