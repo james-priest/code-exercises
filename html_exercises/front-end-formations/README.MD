@@ -1,4 +1,4 @@
-# Code School - Front End Modifications
+# Code School - Front End Formations
 
 These are exercises from Code School's Front End Modifications class
 - [https://www.codeschool.com/courses/front-end-formations](https://www.codeschool.com/courses/front-end-formations)
