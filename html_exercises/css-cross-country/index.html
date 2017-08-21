@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            /* clearfix - This allow the .group class to be added to parent element to clear floats */
+            .group::before, .group::after {content: ""; display: table;}
+            .group::after {clear:both;}
+            .group { zoom: 1; /*IE6&7*/ }
+            
+            .group {border:1px dashed gray;width:460px;}
+            .group>img {float:left;width:200px;}
+            .group>p {float: right;width:200px;}
+
+            .clear {clear:both;} /* this is not needed!!! yay! */
+        </style>
+    </head>
+    <body>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="group">
+            <img src="images/ski.jpg" alt="Skiing">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam vel consequatur, sapiente error at ipsam vitae quia debitis vero velit amet eius, pariatur excepturi commodi, impedit harum! Ratione, quo.</p>
+            <!-- <div class="clear"></div>  -->
+        </div>
+        <p>This is an example of content after.</p>
+        <P>Specificity has to do with 0,0,0,0</P>
+
+        <pre>
+            <code>
+// Specificity has to do with 0,0,0,0
+
+element     p { color: #fff; }                     0,0,0,1
+class       .intro { color: #fff; }                0,0,1,0
+id          #header { color: #fff; }               0,1,0,0
+inline      &lt;h1 style="color: #000"&gt;Mogul&lt;/h1&gt;     1,0,0,0
+important   p { color: #fff !important; }            -!-
+
+// test cases
+               .intro p.article {color:#ccc;}      0,0,2,1
+               .intro ul li.active {color:#bbb;}   0,0,2,2
+               #header {color:#aaa}                0,1,0,0
+            </code>
+        </pre>
+    </body>
+</html>
