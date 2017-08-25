@@ -1,0 +1,83 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 70px;
+  font-size: 17px;
+  position: relative;
+  /* font-family: 'Ovo'; */
+  font-family: 'PT Sans Narrow';
+}
+h1, .navbar-brand, .lead, .copyright {
+  font-family: 'Aclonica';
+}
+h2 {
+  font-family: 'Aclonica';
+  border-bottom: 1px #eee solid;
+  margin-bottom: 20px;
+}
+#about, #portfolio, #contact {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#about, #contact {
+  font-size: 18px;
+}
+#catwalk{
+  padding-top:20px;
+}
+#portfolio img {
+  margin-bottom:0px
+}
+.img-circle {
+  border: 1px solid #ccc;
+}
+/* contact */
+#totalMice {
+  width: 40px;
+  display: inline-block;
+}
+#mouse-table {
+  /* width: 180px; */
+  float: right;
+}
+#mouseLabel {
+  width: 40px;
+}
+
+footer {
+  margin-top: 30px;
+  background-color:#999;
+  /* padding:20px 0; */
+  height: 100%;
+  /* position: static; */
+}
+.sm-group {
+  padding: 30px 0;
+}
+  a.button.social-media {
+    background-color: #EEE;
+    display: inline-block;
+    padding: 11px;
+    border: 1px solid;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    height: 60px;
+    padding-top: 18px;
+  }
+  a:hover.button.social-media {
+    background-color: #333;
+    color: #eee;
+  }
+  #hundred-days {
+    font-size: 25px;
+    color: #337ab7;
+    padding-top: 10px;
+    position: relative;
+    top: 0px;
+  }
+.copyright {
+  background-color: rgb(34,34,34);
+  padding: 20px 0;
+  color: rgb(157,157,157);
+  font-size: 14px;
+}
