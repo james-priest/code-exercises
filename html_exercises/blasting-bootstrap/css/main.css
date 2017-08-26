@@ -1,4 +1,17 @@
 .features .glyphicon {
     font-size: 32px;
     /* color: red; */
+    margin: 20px 0;
+}
+.quote {
+    margin: 40px 0 20px;
+}
+.footer {
+    margin: 30px 0 0;
+    padding: 20px 0 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+}
+body {
+    margin-bottom: 0;
 }
