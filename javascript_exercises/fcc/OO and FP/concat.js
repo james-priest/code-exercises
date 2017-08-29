@@ -7,7 +7,7 @@ Here is an example of concat being used to concatenate otherArray onto the end o
 
 newArray = oldArray.concat(otherArray);
 
-Use .concat() to concatenate concatMe onto the end of oldArray and assign it to newArray.
+Use .concat() to concatenate concatMe onto the end of oldArray and assign it to newArray. 
  */
 var oldArray = [1, 2, 3,];
 var newArray = [];

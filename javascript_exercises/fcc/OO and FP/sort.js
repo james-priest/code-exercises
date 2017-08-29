@@ -7,7 +7,7 @@ sort can be passed a compare function as a callback. The compare function should
 
 If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.
 
-Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:
+Here is an example of using sort with a compare function that will sort the elements from smallest to largest number: 
  */
 var array = [1, 12, 3, 21, 2];
 

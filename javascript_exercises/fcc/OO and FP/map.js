@@ -1,7 +1,7 @@
 /**
  * The map method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it. Note that it does not modify the original array.
 
-In our example the callback only uses the value of the array element (the val argument) but your callback can also include arguments for the index and array being acted on.
+In our example the callback only uses the value of the array element (the val argument) but your callback can also include arguments for the index and array being acted on. 
  */
 
 var oldArray = [1, 2, 3, 4, 5];

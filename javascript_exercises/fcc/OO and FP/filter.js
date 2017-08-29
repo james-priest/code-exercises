@@ -7,7 +7,7 @@ Any array element for which the callback returns true will be kept and elements 
 
 The following code is an example of using filter to remove array elements that are equal to five:
 
-Note: We omit the second and third arguments since we only need the value
+Note: We omit the second and third arguments since we only need the value 
  */
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
