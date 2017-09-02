@@ -17,3 +17,6 @@ var newArray = oldArray.map(function (val) {
 });
 
 console.log(newArray);
+
+var newArrayES6 = oldArray.map(val => val + 3);
+console.log(newArrayES6);

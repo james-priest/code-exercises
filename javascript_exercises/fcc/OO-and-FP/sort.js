@@ -26,3 +26,12 @@ array2.sort(function (a, b) {
     return b - a; // sorts from largest to smallest
 });
 console.log(array2);
+
+// ES2015
+var array3 = [1, 12, 3, 21, 2];
+array3.sort((a, b) => a - b); // sorts from smallest to largest
+console.log(array3);
+
+var array4 = [1, 12, 3, 21, 2];
+array4.sort((a, b) => b - a); // sorts from largest to smallest
+console.log(array4);

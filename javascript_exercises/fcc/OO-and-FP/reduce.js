@@ -27,4 +27,9 @@ singleVal = array.reduce(function (previousVal, currentVal) {
     return previousVal + currentVal;
 }, 0);
 
-console.log(singleVal);
+console.log("es5:", singleVal); // 30
+
+//ES2015
+var singleValES6 = 0;
+singleValES6 = array.reduce((previousVal, currentVal) => previousVal + currentVal);
+console.log("es6:", singleValES6); //30

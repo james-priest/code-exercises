@@ -26,3 +26,7 @@ var newArray = oldArray.filter(function (val) {
 });
 
 console.log(newArray);
+
+// ES6
+var newArray2 = oldArray.filter(val => !(val < 6));
+console.log(newArray2);
