@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>prefilter JSON</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <h2>Cat Photo Finder</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12 well message">
+                The message will go here
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <button id="getMessage" class="btn btn-primary">
+                  Get Message
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#getMessage").on("click", function () {  
+                $.getJSON("http://freecodecamp.org/json/cats.json", function (json) {
+                    var html = "";
+
+                    // filter results
+                    json = json.filter(function(val) {
+                        return (val.id !== 1);
+                    });
+
+                    json.forEach(function(val) {
+                        html += "<div class = 'cat'>"
+                        html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
+                        html += "</div>"
+                    });
+            
+                    $(".message").html(html);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
