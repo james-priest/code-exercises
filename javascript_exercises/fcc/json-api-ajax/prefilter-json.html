@@ -5,7 +5,6 @@
     <title>prefilter JSON</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,22 +26,42 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <script>
+        var jsonCatData = ""
+
+        function processJSONP(json) {
+            console.log("YES");
+            jsonCatData = json;
+            console.log(jsonCatData);
+        }
+
+        function jsonpCallback(json) {
+            console.log("YES");
+            jsonCatData = json;
+            console.log(jsonCatData);
+        }
+
         $(document).ready(function () {
-
+            
             $("#getMessage").on("click", function () {  
-                $.getJSON("http://freecodecamp.org/json/cats.json", function (json) {
+                // option #1 - doesn't work
+                // $.getJSON('http://www.whateverorigin.org/get?url=' + "https://freecodecamp.org/json/cats.json" + "&callback=?", function (json) {
+                // option #2  - works but restricted
+                $.getJSON('http://anyorigin.com/go?url=https%3A//freecodecamp.org/json/cats.json&callback=?', function(json){
                     var html = "";
+                    console.log(json); // json for whateverorigin
 
+                    console.log(json.contents); // json.contents for anyorigin
                     // filter results
-                    json = json.filter(function(val) {
-                        return (val.id !== 1);
+                    json = json.contents.filter(function(val) {
+                        return (val.id !== 2);
                     });
 
                     json.forEach(function(val) {
-                        html += "<div class = 'cat'>"
-                        html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
-                        html += "</div>"
+                        html += "<div class = 'cat'>";
+                        html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+                        html += "</div>";
                     });
             
                     $(".message").html(html);
@@ -50,6 +69,7 @@
             });
         });
     </script>
+    <script async src="https://freecodecamp.org/json/cats.json?callback=processJSONP"></script>
 </body>
 
 </html>
