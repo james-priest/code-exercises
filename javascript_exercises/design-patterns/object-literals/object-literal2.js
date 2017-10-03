@@ -14,7 +14,7 @@
 
 var runApp = {
     init: function () {
-        this.run()
+        this.run();
     },
     run: function () {
         console.log("It's running!");
