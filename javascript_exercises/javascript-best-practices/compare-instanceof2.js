@@ -36,7 +36,7 @@ var duneInhabitants = [NumberNommer, StringSeeker,
 
 var count = 0;
 for ( var i = 0; i < duneInhabitants.length; i++ ) {
-    if (duneInhabitants[i] instanceof SyntaxBird) {
+    if (duneInhabitants[i] instanceof SyntaxBird) { // compare instanceof
         count++;
     }
 }

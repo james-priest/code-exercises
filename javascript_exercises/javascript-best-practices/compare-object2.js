@@ -1,5 +1,5 @@
-var strength = true;
-var fear = false;
+// const log = require( '../cl.js' );
+
 var pack = {
     foodPouch: [ 'carrot', 'mystery meat', 'apple', 42 ],
     addFood: function( foodItem ) {
@@ -19,6 +19,5 @@ var pack = {
         }
     }
 };
-
 
 pack.feedBird( 42 );

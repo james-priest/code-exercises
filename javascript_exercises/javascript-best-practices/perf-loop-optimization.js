@@ -95,38 +95,4 @@ list.forEach( function( item, idx ) {
 
 // Map()
 log.cld( "map method" );
-list.map( (item, index) => ( log.cli( (index + 1) + " " + item ) ) );
-
-
-// *** Don't Copy this into DevTools to test process time - test is flawed; instead see perf-time1, 2, 3 ***
-/*
-// load gems
-var gem = [ 'garnet', 'amethyst', 'aquamarine', 'diamond', 'emerald', 'pearl', 'ruby', 'peridot', 'sapphire', 'opal', 'topaz', 'turquoise' ];
-var chest = {
-    box: { bag: { gems: [] } } // gems inside a bag inside a box inside a chest
-};
-var loopNum = 1000;
-var gems = chest.box.bag.gems;
-console.time( "Load " + gems.length + " Gems" );
-for ( var x = 0; x < loopNum; x++ ) {
-    gem.map( val => ( gems.push(val) ) );
-}
-console.timeEnd( "Load " + gems.length + " Gems" );
-// alert( "gems loaded" );
-// loop thru gems by traversing object chain
-console.time( "Time to traverse " + chest.box.bag.gems.length + " Gems in loop construct & body" );
-for ( var y = 0; y < chest.box.bag.gems.length; y++ ) {
-    var x = chest.box.bag.gems[ y ];
-    // console.log( x );
-}
-console.timeEnd( "Time to traverse " + chest.box.bag.gems.length + " Gems in loop construct & body" );
-// alert( "finished long method." );
-// loop thru g
-console.time( "Time to traverse " + gems.length + " Gems with optimized loop constructor" );
-for ( var z = 0, gems = chest.box.bag.gems; z < gems.length; z++ ) {
-    var g = gems[ z ];
-    // console.log( g );
-}
-console.timeEnd( "Time to traverse " + gems.length + " Gems with optimized loop constructor" );
-// alert( "finished short method" );
-*/
+list.map( ( item, index ) => ( log.cli( ( index + 1 ) + " " + item ) ) );

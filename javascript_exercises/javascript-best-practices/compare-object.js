@@ -1,4 +1,5 @@
 const log = require( '../cl.js' );
+const m = require( './modules/knight.js' );
 
 function Armor( location ) {
     this.location = location;
@@ -28,8 +29,8 @@ var arm1 = new LeatherArmor( "big", 2, 2 );
 var arm2 = new ChainMail( "steel", "2cm", false, 42 );
 var arm3 = new LeatherArmor( "med", 3, 4 );
 var arm4 = new ChainMail( "bronze", "3cm", true, 40 );
-var knight1 = new Knight( "John", 1 );
-var knight2 = new Knight( "Rick", 2 );
+var knight1 = new m.Knight( "John", 1 );
+var knight2 = new m.Knight( "Rick", 2 );
 var kingsMail = new ChainMail( "gold", 2, true, 36 );
 
 
@@ -58,38 +59,5 @@ assignKnightsArmor( newbs, armorList );
 log.cll( "armorList.length after", armorList.length );
 // console.log( armorList );
 
-// This is useful if you need to make sure an object has access to properties before you try an d call them
-log.cll( "kingsMail instancof Armor", kingsMail instanceof Armor );
-
-// Knight object used for tests
-function Knight( name, regiment ) {
-    this.name = name;
-    this.regiment = regiment;
-    switch ( regiment ) {
-        case 1:
-            this.weapon = "Broadsword";
-            break;
-        case 2:
-            this.weapon = "Claymore";
-            break;
-        case 3:
-            this.weapon = "Longsword";
-            break;
-        case 5:
-            this.weapon = "War Hammer";
-            break;
-        case 6:
-            this.weapon = "Battle Axe";
-            break;
-        case 4:
-        case 7:
-        case 8:
-            this.weapon = "Morning Star";
-            break;
-        case "King":
-            this.weapon = "Excalibur";
-            break;
-        default:
-            console.log( name + " has an incorrect regiment, Master Armourer! No weapon assigned!" );
-    }
-}
+// This is useful if you need to make sure an object has access to properties before you try and call them
+log.cll( "kingsMail instanceof Armor", kingsMail instanceof Armor );

@@ -1,12 +1,13 @@
 const log = require( '../cl.js' );
+const m = require( './modules/knight.js' );
 
 var rightNow = +new Date();
 var endTime = +new Date();
 var elapsedTime = endTime - rightNow;
 
 
-console.log( elapsedTime );
-// console.log( +rightNow ); // is equivalent to console.log(new Number (rightNow));
+// console.log( elapsedTime );
+console.log( +rightNow ); // is equivalent to console.log(new Number (rightNow));
 
 function SpeedTest( testImplement, testParams, repetitions ) {
     this.testImplement = testImplement;
@@ -35,13 +36,13 @@ var listsForTests = [ firstRegimentNewbs, firstRegimentKnight ]; // This is the 
 
 var noBP = function( listOfParams ) { // no Best Practice code
     for ( var i = 0; i < listOfParams[0].length; i++ ) {
-        var newGuy = new Knight( listOfParams[0][ i ], 1 );
+        var newGuy = new m.Knight( listOfParams[0][ i ], 1 );
         listOfParams[1].push( newGuy );
     }
 };
 var BP = function( listOfParams ) { // Best Practice code
     for ( var i = 0, x = listOfParams[ 0 ].length; i < x; i++ ) {
-        listOfParams[1].push( new Knight( listOfParams[0][ i ], 1 ) );
+        listOfParams[1].push( new m.Knight( listOfParams[0][ i ], 1 ) );
     }
 };
 
@@ -51,36 +52,3 @@ noBPTest.startTest(); // run it!
 
 var BPTest = new SpeedTest( BP, listsForTests, 100000 ); // Create the SpeedTest object
 BPTest.startTest(); // run it!
-
-// Knight object used for tests
-function Knight( name, regiment ) {
-    this.name = name;
-    this.regiment = regiment;
-    switch ( regiment ) {
-        case 1:
-            this.weapon = "Broadsword";
-            break;
-        case 2:
-            this.weapon = "Claymore";
-            break;
-        case 3:
-            this.weapon = "Longsword";
-            break;
-        case 5:
-            this.weapon = "War Hammer";
-            break;
-        case 6:
-            this.weapon = "Battle Axe";
-            break;
-        case 4:
-        case 7:
-        case 8:
-            this.weapon = "Morning Star";
-            break;
-        case "King":
-            this.weapon = "Excalibur";
-            break;
-        default:
-            console.log( name + " has an incorrect regiment, Master Armourer! No weapon assigned!" );
-    }
-}

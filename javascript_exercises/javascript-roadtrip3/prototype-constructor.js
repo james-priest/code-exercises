@@ -25,10 +25,10 @@ var myMother = new Person("Gladys", "Priest", 75, "brown");
 // myFriend("Joe", "Smith", 25, "brown");
 
 
-log.cll("myFather instanceof Object", myFather instanceof Object);
-log.cll("myFather instance of Person", myFather instanceof Person);
-log.cll("myMother instanceof Person", myMother instanceof Person);
+log.cll("myFather instanceof Object", myFather instanceof Object); // true
+log.cll("myFather instance of Person", myFather instanceof Person); // true
+log.cll("myMother instanceof Person", myMother instanceof Person); // true
 log.cl("");
-log.cll("Object.prototype.isPrototypeOf(Person)", Object.prototype.isPrototypeOf(Person));
-log.cll("Person.prototype.isPrototypeOf(myFather)", Person.prototype.isPrototypeOf(myFather));
-log.cll("Person.isPrototypeOf(myFather)", Person.isPrototypeOf(myFather));
+log.cll("Object.prototype.isPrototypeOf(Person)", Object.prototype.isPrototypeOf(Person)); // true
+log.cll("Person.prototype.isPrototypeOf(myFather)", Person.prototype.isPrototypeOf(myFather)); // true
+log.cll("Person.isPrototypeOf(myFather)", Person.isPrototypeOf(myFather)); // false
