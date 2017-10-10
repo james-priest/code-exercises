@@ -27,6 +27,7 @@
     "eslint-plugin-import": "^2.7.0",
     "flow-bin": "^0.50.0",
     "flow-remove-types": "^1.2.1",
+    "tape": "^4.8.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2"
   },
