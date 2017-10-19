@@ -1,0 +1,20 @@
+.defined-icon {
+    display: none;
+}
+
+#phone rect, #phone circle {
+    fill: white;
+}
+
+#phone rect {
+    stroke: #ff2626;
+    stroke-width: 10px;
+}
+.top-displayed-icon {
+    width: 10%;
+    clear: left;
+}
+.displayed-icon {
+    height: auto;
+    width: 30%;
+}
