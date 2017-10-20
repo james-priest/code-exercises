@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+    <ul>
+        <li class="vacation">
+            <a href="#" class="expand">Show Comments</a>
+            <ul class="comments">
+                <li>Comment 1</li>
+                <li>Comment 2</li>
+            </ul>
+        </li>
+        <li class="vacation">
+            <a href="#" class="expand">Show Comments</a>
+            <ul class="comments">
+                <li>Comment 1</li>
+                <li>Comment 2</li>
+            </ul>
+        </li>
+        <li class="vacation">
+            <a href="#" class="expand">Show Comments</a>
+            <ul class="comments">
+                <li>Comment 1</li>
+                <li>Comment 2</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.vacation').on('click','.expand',function(event){
+            // find comment ul
+            // show comments ul
+            // event.stopPropagation();
+            event.preventDefault();
+            $(this).closest('.vacation')
+                .find('.comments')
+                .fadeToggle();
+        });
+    });
+    </script>
+    </body>
+</html>

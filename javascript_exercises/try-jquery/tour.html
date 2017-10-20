@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id='tour'>
+        <h2>Paris, France Tour</h2>
+        <p>$2,499 for 7 Nights</p>
+        <button>See photos from our last tour</button>
+        <ul class='photos'>
+            <li>
+                <img src="photos/paris1.jpg" /><br />
+                <span>Arc de Triomphe</span>
+            </li>
+            <li>
+                <img src="photos/paris2.jpg" /><br />
+                <span>The Eiffel Tower</span>
+            </li>
+            <li>
+                <img src="photos/paris3.jpg" /><br />
+                <span>Notre Dame de Paris</span>
+            </li>
+        </ul>
+    </div>
+    <div class="tour" data-daily-price="357">
+        <h2>Paris, France Tour</h2>
+        <p>$<span id="total">2,499</span> for <span id="nights-count">7</span> Nights</p>
+        <p>
+            <label for="nights">Number of Nights</label>
+        </p>
+        <p>
+            <input type="number" id="nights" value="7">
+        </p>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        // expand photos
+        $('#tour').on('click', 'button', function() {
+            $(this).closest('#tour').find('.photos').slideToggle();
+        });
+        // add a new event handler
+        // $('.photos').on('mouseenter', 'li', function() {
+        //     $(this).find('span').slideToggle();
+        // });
+        // // add another event handler
+        // $('.photos').on('mouseout', 'li', function() {
+        //     $(this).find('span').slideToggle();
+        // });
+
+        // hover over labels
+        $('.photos').on('mouseenter', 'li', showPhotos);
+        $('.photos').on('mouseleave', 'li', showPhotos);
+
+        function showPhotos() {
+            $(this).find('span').slideToggle();
+        }
+
+        // update price
+        $('#nights').on('keyup change', function() {
+            $('#nights-count').text($(this).val());
+            var price = +$(this).closest('.tour').data('daily-price');
+            var nights = +$('#nights').val();
+            $('#total').text(nights * price);
+        });
+        // add another event handler
+        $('#nights').on('focus', function() {
+            $('#nights').val(7);
+        });
+    });
+    </script>
+</body>
+
+</html>

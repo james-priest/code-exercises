@@ -1,0 +1,10 @@
+.highlighted {
+    border: 2px solid pink;
+    border-style: dashed;
+}
+.ticket, .photos {
+    display: none;
+}
+.comments {
+    display: none;
+}

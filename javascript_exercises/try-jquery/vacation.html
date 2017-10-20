@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+    <div id="filters">
+        <button class="on-sale-filter">On Sale Now</button>
+        <button class="expiring-filter">Expiring Soon</button>
+    </div>
+
+    
+    <ul id="list">
+        <li class="vacation expiring" data-price="479.99">
+            <h2>Hawaiian Vacation</h2>
+            <button>Get Price</button>
+        </li>
+        <li class="vacation on-sale" data-price="649.99">
+            <h2>Asian Vacation</h2>
+            <button>Get Price</button>
+        </li>
+        <li class="vacation on-sale" data-price="399.99">
+            <h2>European Vacation</h2>
+            <div>
+                <button>Get Price</button>
+            </div>
+        </li>
+        <li class="vacation1" data-price="99.99">
+            <h2>No Change</h2>
+            <div>
+                <button>Get Price</button>
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li class="confirmation">
+            <h2>jQuery Travels - Vacation Confirmation</h2>
+            <h3>Confirmations</h3>
+            <h3>Hawaiian Vacation</h3>
+            <p>Paid $399.99 on Janurary 14, 2013.</p>
+            <button>FLIGHT DETAILS</button>
+            <ul class="ticket">
+                <li>Flight 151</li>
+                <li>Leaving LAX</li>
+                <li>Tue Jan 15th 8:30pm</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="vacation" data-price="399.99">
+        <h3>Hawaiian Vacation</h3>
+        <p>$399.99 per ticket</p>
+        <p>
+            Tickets:
+            <input type="number" class="quantity" value="1">
+        </p>
+    </div>
+    <p>Total Price: $<span id='total'>399.99</span></p>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            // var price = $('<p>From $399.99</p>');
+
+            // $('.vacation').prepend(price); // first in list of child elements
+            // $('.vacation').append(price); // last in list of child elements
+            // $("h2").after(price); // next after current element
+            // $("h2").before(price); // prev to current element
+            
+            // price.prependTo(".vacation");
+            // price.appendTo(".vacation");
+            // price.insertAfter("h2");
+            // price.insertBefore("h2");
+            
+            // $("button").remove();
+
+            // vacation buttons
+            $(".vacation").on("click", "button", function(e) {
+                var vacation = $(this).closest(".vacation"); //keeping it DRY and only querying DOM once
+                var amount = vacation.data("price");
+                var price = $('<p>From $' + amount + '</p>');
+                // $(".vacation").append(price);
+                // $(this).parent().parent().after(price); // this is fragile
+                vacation.append(price);
+                // $("button").remove();
+                $(this).remove();
+                // e.preventDefault();
+            });
+
+            // filter buttons
+            $("#filters").on("click", ".on-sale-filter", function(){
+                // find all vacations on sale
+                // add 'highlighted' class to these vacations
+                // $(".vacation.on-sale") // slower
+                $(".highlighted").removeClass("highlighted");
+                $(".vacation").filter(".on-sale").addClass("highlighted");
+            });
+            $("#filters").on("click", ".expiring-filter", function() {
+                $(".highlighted").removeClass("highlighted");
+                $(".vacation").filter(".expiring").addClass("highlighted");
+            });
+
+            // confirmation button
+            // $(".confirmation").on("click", "button", function() {
+            //     $(this).closest(".confirmation").find(".ticket").slideDown();
+            // });
+            // $('.confirmation').on('mouseenter', 'h3', function() {
+            //     $(this).closest('.confirmation').find('.ticket').slideDown();
+            // });
+            $('.confirmation').on('click', 'button', showTicket);
+            $('.confirmation').on('mouseenter', 'h3', showTicket);
+            $('.confirmation').on('mouseleave', 'h3', hideTicket);
+            function showTicket() {
+                $(this).closest(".confirmation").find(".ticket").slideDown();
+            }
+            function hideTicket() {
+                $(this).closest(".confirmation").find(".ticket").slideUp();
+            }
+
+            //Ticket quantity
+            $('.vacation').on('change keyup', '.quantity', function() {
+                var price = +$(this).closest('.vacation').data('price');
+                var qty = +$(this).val();
+                $('#total').text(price * qty);
+            });
+        })
+    </script>
+    </body>
+</html>
