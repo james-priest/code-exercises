@@ -1,0 +1,13 @@
+form {
+    width: 350px;
+    box-sizing: border-box;
+    /* border: 1px solid pink; */
+}
+label {
+    clear: both;
+    display: block;
+    width: 100px;
+    text-align: right;
+    float: left;
+    margin-right: 10px;
+}
