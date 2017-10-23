@@ -24,6 +24,7 @@
     "babel-eslint": "^7.2.3",
     "eslint": "^4.3.0",
     "eslint-config-airbnb-base": "^11.3.0",
+    "eslint-config-p5js": "^1.0.1",
     "eslint-plugin-import": "^2.7.0",
     "flow-bin": "^0.50.0",
     "flow-remove-types": "^1.2.1",
@@ -32,6 +33,7 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "p5": "^0.5.16"
   }
 }
