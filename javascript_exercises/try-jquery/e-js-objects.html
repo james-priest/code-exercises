@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <ul>
+        <li class='confirmation'>
+            <h3>Hawaiian Vacation</h3>
+            <button>Flight details</button>
+            <div class='ticket' data-confNum="1234">
+                <!-- <a class='view-boarding-pass' href='#'>View Boarding Pass</a>
+                <img src='photos/ticket.png' style="display:none;" /> -->
+            </div>
+        </li>
+    </ul>
+    <script src='./../../node_modules/jquery/dist/jquery.min.js'></script>
+    <script>
+        var confirmation = {
+            init: function() {
+                $( '.confirmation' ).on( 'click', 'button', function() {
+                    $.ajax( 'service/confirmation.html', {
+                        success: function( response ) {
+                            $( '.ticket' ).html( response ).slideDown();
+                            console.log( 'XHR finished loading' );
+                        },
+                        error: function( request, errorType, errorMessage ) {
+                            console.log( 'Error:', errorType, 'with message:', errorMessage );
+                            console.log( request );
+                        },
+                        timeout: 3000,
+                        beforeSend: function() {
+                            // runs before ajax request - trigger a spinner
+                            $( '.confirmation' ).addClass( 'is-loading' );
+                        },
+                        complete: function() {
+                            // runs after both success and error
+                            $( '.confirmation' ).removeClass( 'is-loading' );
+                        },
+                        data: {
+                            "confNum": $( '.ticket' ).data( 'confNum' )
+                        }
+                    } );
+                } );
+
+                $( '.confirmation' ).on( 'click', '.view-boarding-pass', function() {
+                    $( this ).closest( '.ticket' ).find( 'img' ).show();
+                    $( this ).remove();
+                } );
+            }
+        };
+
+        $( document ).ready( function() {
+            confirmation.init();
+        } );
+    </script>
+</body>
+
+</html>
