@@ -1,0 +1,8 @@
+{
+    /* See all the pre-defined configs here: https://www.npmjs.com/package/eslint-config-defaults */
+	"extends": [
+		"p5js",
+        "p5js/dom",
+		"p5js/sound"
+	]
+}
