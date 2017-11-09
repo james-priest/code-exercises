@@ -2,8 +2,12 @@
     border: 2px solid pink;
     border-style: dashed;
 }
-.ticket, .photos {
+.ticket, .photos, .ticket img.boarding-pass  {
     display: none;
+}
+.ticket .boarding-pass  {
+
+    border: 1px solid salmon;
 }
 .comments {
     display: none;
