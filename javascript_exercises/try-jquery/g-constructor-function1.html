@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <ul>
+        <li class='confirmation' id="paris">
+            <h3>Parisian Vacation</h3>
+            <button>Flight details</button>
+            <div class='ticket' data-confNum="1234">
+                <!-- <a class='view-boarding-pass' href='#'>View Boarding Pass</a>
+                <img src='photos/ticket.png' style="display:none;" /> -->
+            </div>
+        </li>
+        <li class='confirmation' id="london">
+            <h3>British Vacation</h3>
+            <button>Flight details</button>
+            <div class='ticket' data-confNum="1234">
+                <!-- <a class='view-boarding-pass' href='#'>View Boarding Pass</a>
+                <img src='photos/ticket.png' style="display:none;" /> -->
+            </div>
+        </li>
+    </ul>
+    <script src='./../../node_modules/jquery/dist/jquery.min.js'></script>
+    <script>
+        $( document ).ready( function() {
+            var paris = new Vacation('Paris');
+            // paris.details();
+
+            var london = new Vacation('London');
+            // london.details();
+        } );
+
+        function Vacation(destination) {
+            this.el = $('#' + destination.toLowerCase());
+
+            // helper method - FE must be defined before use in event handler! 
+            this.details = function() {
+                console.log( "You are going to", destination + "!");
+            };
+
+            // event handler
+            this.el.on('click', 'button', this.details); // output to console on click
+        }
+    </script>
+</body>
+
+</html>
