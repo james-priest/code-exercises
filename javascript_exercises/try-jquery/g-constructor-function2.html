@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <ul>
+        <li class='confirmation' id="paris" data-conf="987">
+            <h3>Hawaiian Vacation</h3>
+            <button>Flight details</button>
+            <div class='ticket' data-conf-num="1234">
+                <!-- <a class='view-boarding-pass' href='#'>View Boarding Pass</a>
+                <img src='photos/ticket.png' style="display:none;" /> -->
+            </div>
+        </li>
+        <li class='confirmation' id="london" data-conf="321">
+            <h3>Hawaiian Vacation</h3>
+            <button>Flight details</button>
+            <div class='ticket' data-conf-num="5678">
+                <!-- <a class='view-boarding-pass' href='#'>View Boarding Pass</a>
+                <img src='photos/ticket.png' style="display:none;" /> -->
+            </div>
+        </li>
+    </ul>
+    <script src='./../../node_modules/jquery/dist/jquery.min.js'></script>
+    <script>
+        $( document ).ready( function() {
+            var paris = new Confirmation($('#paris'));
+            var london = new Confirmation($('#london'));
+        } );
+
+        /**
+         * This is complex!
+         * Had to define public properties on Confirmation object
+         */
+        function Confirmation(el) {
+            this.el = el; // save ref to passed in element
+            this.ticket = this.el.find('.ticket');
+            var confirmation = this; // this is defined for use in ajax context options key
+            console.log(this.el);
+
+            // helper methods
+            this.loadConfirmation = function() {
+                $.ajax( 'service/confirmation.html', {
+                    timeout: 3000,
+                    context: confirmation, // sets context for `this` keyword.. must init confirmation var above
+                    data: {  
+                        // "confNum": 1234  // works!
+                        // "conf": confirmation.el.data( 'conf' ), // works!
+                        "conf-num": confirmation.ticket.data( 'conf-num' )  //works!
+                        // Camel-case doesn't work! Has to be lowercase. Dashes are fine. 
+                    },
+                    success: function( response ) {
+                        // $( '.ticket' ).html( response ).slideDown();
+                        this.ticket.html(response).slideDown();
+                        console.log( 'XHR finished loading' );
+                    },
+                    error: function( request, errorType, errorMessage ) {
+                        console.log( 'Error:', errorType, 'with message:', errorMessage );
+                        console.log( request );
+                    },
+                    
+                    beforeSend: function() {
+                        // runs before ajax request - trigger a spinner
+                        $( '.confirmation' ).addClass( 'is-loading' );
+                    },
+                    complete: function(jqXHR) {
+                        // runs after both success and error
+                        $( '.confirmation' ).removeClass( 'is-loading' );
+                        // console.log(jqXHR);
+                    }                    
+                } );
+            }
+            this.showBoardingPass = function(event) {
+                event.preventDefault();
+                // $( this ).closest( '.ticket' ).find( 'img' ).show();
+                // $( this ).remove();
+                console.log(this);
+                console.log(confirmation);
+                $(this).hide();
+                confirmation.el.find('.boarding-pass').show();
+
+            }
+            // event handlers - have to happen at the end;
+            // after this.loadConfirmation & this.showBoardingPass is defined
+            this.el.on('click', 'button', this.loadConfirmation);
+            this.el.on( 'click', '.view-boarding-pass', this.showBoardingPass );
+        }
+    </script>
+</body>
+
+</html>
