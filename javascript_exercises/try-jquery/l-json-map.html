@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <button class='update-flight-status'>Update Flight Status</button>
+        <div class='status'>
+            <ul class='status-list'>
+                <li>
+                    <h3>JFK - New York, NY</h3>
+                    <p>Departing Location</p>
+                </li>
+                <li>
+                    <h3>SFO - San Francisco, CA</h3>
+                    <p>Destination Location</p>
+                </li>
+            </ul>
+        </div>
+
+        <script src='script/jquery.js'></script>
+        <script>
+        $(document).ready(function() {
+            $('.update-flight-status').on('click', function(e) {
+                $.getJSON( '/status', function(result) {
+                    console.log('****** response received ****** ');
+                    console.log('Success:');
+                    console.log(' ', result);
+
+                    var statusElements = $.map(result, function(loc, index) {
+                        // NOTE: Syntax #1
+                        // $('.favorite-' + index)
+                        //     .find('img').attr('src', loc.image)
+                        //     .closest('.favorite-' + index)
+                        //     .find('p').html(loc.name);
+                            
+                        // NOTE: Syntax #2
+                        // var favorite = $('.favorite-' + index);
+                        // favorite.find('img').attr('src', loc.image);
+                        // favorite.find('p').html(loc.name);
+
+                        var listItem = $('<li></li>');
+                        $('<h3>' + loc.name + '</h3>').appendTo(listItem);
+                        $('<p>' + loc.status + '</p>').appendTo(listItem);
+                        return listItem;
+
+                    });
+                    $('.status-list').html(statusElements);
+                    
+                });
+            });
+        } );
+        </script>
+    </body>
+</html>
