@@ -48,7 +48,9 @@
                         return listItem;
 
                     });
-                    $('.status-list').html(statusElements);
+                    $('.status-list').detach()
+                        .html(statusElements)
+                        .appendTo('.status');
                     
                 });
             });
