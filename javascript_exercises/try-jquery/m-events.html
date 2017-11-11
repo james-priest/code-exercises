@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id='vacations'>
+            <h2>Packages</h2>
+            <ul>
+                <li>
+                    <a href='#' class='show-prices'>Show All Prices</a>
+                </li>
+                <li>
+                    <a href='#' class='remove-onsale'>Remove onsale click handler</a>
+                </li>
+            </ul>
+    
+            <ul>
+                <li class="vacation onsale" data-price='399.99'>
+                    <h3>Hawaiian Vacation - onsale</h3>
+                    <button>Show Price</button>
+                    <a href='#' class='remove-vacation'>Not Interested</a>
+                </li>
+                <li class="vacation expiring" data-price='749.99'>
+                    <h3>European Getaway - expiring</h3>
+                    <button>Show Price</button>
+                    <a href='#' class='remove-vacation'>Not Interested</a>
+                </li>
+                <li class="vacation" data-price='859.99'>
+                    <h3>Visit Japan</h3>
+                    <button>Show Price</button>
+                    <a href='#' class='remove-vacation'>Not Interested</a>
+                </li>
+            </ul>
+        </div>
+    
+        <p class="featured">Call us at 555-25937 to make a reservation today!</p>
+
+        <script src='script/jquery.js'></script>
+        <script>
+            // $( function() {
+            //     $( '.vacation' ).priceify();
+            // } );
+            // $.fn.priceify = function() {
+            //     console.log( 'Pricify Called' );
+            //     console.log( this );
+            // };
+
+            var showPrice = function() {
+                var vacation = $( this ).closest( '.vacation' );
+                var price = vacation.data( 'price' );
+                var details = $( '<p>Book 3 days for $' + ( 3 * price ).toFixed(2) + '</p>' );
+                vacation.append( details );
+                //vacation.off('click.price');
+                $(this).closest('.vacation').off('click.price');
+            };
+
+            // namespaced event (when button under .vacation is clicked)
+            $('.vacation').on('click.price', 'button', showPrice);
+            // when show.price event is triggered, invoke showPrice()
+            $('.vacation').on('show.price', showPrice); 
+            // when show-prices link is clicked, trigger show.price event on .vacation
+            $('.show-prices').on('click', function(event) {
+                event.preventDefault();
+                $('.vacation').trigger('show.price');
+            })
+
+            $('.remove-onsale').on('click', function(event) {
+                event.preventDefault();
+                // $('.onsale').off('click', 'button'); // same
+                // $('.onsale').off('.price', 'button'); // same
+                $('.onsale').off('.price');  // remove handler on li & button
+            })
+        </script>
+    </body>
+</html>

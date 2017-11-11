@@ -13,3 +13,7 @@
     display: none;
 }
 #quantity { width: 20px;}
+
+.is-showing-price button {
+    display: none;
+}
