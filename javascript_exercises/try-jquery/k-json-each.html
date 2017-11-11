@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <button>Display favorites</button>
+        <div class='favorite favorite-0'>
+            <h3>Favorite 0</h3>
+            <img src='' />
+            <p></p>
+        </div>
+        <div class='favorite favorite-1'>
+            <h3>Favorite 1</h3>
+            <img src='' />
+            <p></p>
+        </div>
+        <div class='favorite favorite-2'>
+            <h3>Favorite 2</h3>
+            <img src='' />
+            <p></p>
+        </div>
+
+        <script src='script/jquery.js'></script>
+        <script>
+        $(document).ready(function() {
+            $('button').on('click', function(e) {
+                $.ajax( {
+                    url: '/favorites',
+                    // contentType: 'application/json', // causes error
+                    dataType: 'json', // what we expect back
+
+                    success: function(result) {
+                        console.log('****** response received ****** ');
+                        console.log('Success:');
+                        console.log(' ', result);
+
+                        $.each(result, function(index, loc) {
+                            // NOTE: Syntax #1
+                            $('.favorite-' + index)
+                                .find('img').attr('src', loc.image)
+                                .closest('.favorite-' + index)
+                                .find('p').html(loc.name);
+                                
+                            // NOTE: Syntax #2
+                            // var favorite = $('.favorite-' + index);
+                            // favorite.find('img').attr('src', loc.image);
+                            // favorite.find('p').html(loc.name);
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            });
+        } );
+        </script>
+    </body>
+</html>
