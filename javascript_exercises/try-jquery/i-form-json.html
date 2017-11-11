@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="vacation">
+            <form action='/book'>
+                <h1>Book Vacation</h1>
+                <label for="destination">Destination:</label>
+                <select id='destination' name='destination'>
+                    <!-- <option value="0">Select a Destination</option> -->
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Paris">Paris</option>
+                    <option value="London">London</option>
+                </select><br />
+                <label for="quantity">Tickets:</label>
+                <input type='text' id='quantity' name='quantity' value='1' /><br>
+                <button type="submit">Book Trip</button>
+            </form>
+        </div>
+
+        <script src='script/jquery.js'></script>
+        <script>
+        $(document).ready(function() {
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this); // Save reference to reduce DOM queries
+
+                // DEBUG:
+                console.log('****** request sent ****** ');
+                console.log("form.serialize()");
+                console.log(' ', form.serialize());
+
+                // console.log('objectifyForm(form.serializeArray())');
+                // console.log(' ', objectifyForm(form.serializeArray()));
+
+                // console.log('form.serializeArray().reduce(..)');
+                // console.log(' ', form.serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {}));
+                // console.log('');
+                // END DEBUG:
+
+                $.ajax($('form').attr('action'), {
+                    type: 'POST',
+                    // contentType: 'application/json', // causes error
+                    dataType: 'json', // what we expect back
+
+                    // NOTE: three ways of formatting data for send; serialize works
+                    // The other two produce JSON formated data
+                    data: form.serialize(), // merge all form fields for submission
+                    // data: objectifyForm(form.serializeArray()),
+                    // data: form.serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {}),
+                    
+                    success: function(result) {
+                        console.log('****** response received ****** ');
+                        console.log('Success:');
+                        console.log(' ', result);
+                        form.remove();
+
+                        var msg = $("<p></p>");
+                        msg.prepend("<h1>Trip Booked</h1>");
+                        msg.append("Destination: " + result.location + ". ");
+                        msg.append("Price: " + result.totalPrice + ". ");
+                        msg.append("Nights: " + result.nights + ". ");
+                        msg.append("Confirmation: " + result.confirmation + ". ");
+
+                        $('#vacation').hide().html(msg).fadeIn();
+                    }
+                    // beforeSend: function(jqXHR) {
+                    //     console.log(jqXHR);
+                    // },
+                    // error: function(jqXHR) {
+                    //     console.warn(jqXHR)
+                    // }
+                });
+            });
+        } );
+
+        function objectifyForm( formArray ) {//serialize data function
+            var returnArray = {};
+            for ( var i = 0; i < formArray.length; i++ ) {
+                returnArray[ formArray[ i ][ 'name' ] ] = formArray[ i ][ 'value' ];
+            }
+            return returnArray;
+        }
+        </script>
+    </body>
+</html>
