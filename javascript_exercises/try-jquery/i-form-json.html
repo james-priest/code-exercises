@@ -60,14 +60,26 @@
                         console.log(' ', result);
                         form.remove();
 
-                        var msg = $("<p></p>");
+                        // INFO: Syntax #1
+                        /*
+                        var msg = $("<p></p>"); // This needs to be a jQuery object
                         msg.prepend("<h1>Trip Booked</h1>");
                         msg.append("Destination: " + result.location + ". ");
                         msg.append("Price: " + result.totalPrice + ". ");
                         msg.append("Nights: " + result.nights + ". ");
                         msg.append("Confirmation: " + result.confirmation + ". ");
-
                         $('#vacation').hide().html(msg).fadeIn();
+                        */
+
+                        // INFO: Syntax #2
+                        $('#vacation').html('<h1>Trip Booked</h1><p></p>')
+                                    .find('p')
+                                    .append('Trip to ' + result.location)
+                                    .append(' at $' + result.totalPrice)
+                                    .append(' for ' + result.nights + ' nights')
+                                    .append('. Confirmation: ' + result.confirmation)
+                                    .hide().fadeIn();
+
                     }
                     // beforeSend: function(jqXHR) {
                     //     console.log(jqXHR);
