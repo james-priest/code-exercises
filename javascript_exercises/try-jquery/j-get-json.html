@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id='vacations'>
+            <ul>
+                <li>
+                    <button>Display favorite</button>
+                    <div class='favorite'>
+                        <h3>Favorite</h3>
+                        <img src='' />
+                        <p></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <script src='script/jquery.js'></script>
+        <script>
+        $(document).ready(function() {
+            $('#vacations').on('click', 'button', function(e) {
+                $.ajax( {
+                    url: '/favorite/1',
+                    // contentType: 'application/json', // causes error
+                    dataType: 'json', // what we expect back
+
+                    success: function(result) {
+                        console.log('****** response received ****** ');
+                        console.log('Success:');
+                        console.log(' ', result);
+
+                        var favorite = $('.favorite');
+                        favorite.find('img').attr('src', result.image);
+                        favorite.find('p').append(result.name);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            });
+        } );
+        </script>
+    </body>
+</html>
