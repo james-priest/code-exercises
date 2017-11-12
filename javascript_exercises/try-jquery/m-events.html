@@ -42,9 +42,9 @@
         <script src='script/jquery.js'></script>
         <script>
             var showPrice = function() {
-                var vacation = $( this ).closest( '.vacation' );
-                var price = vacation.data( 'price' );
-                var details = $( '<p>Book 3 days for $' + ( 3 * price ).toFixed(2) + '</p>' );
+                var vacation = $( this ).closest( '.vacation' ),
+                    price = vacation.data( 'price' ),
+                    details = $( '<p>Book 3 days for $' + ( 3 * price ).toFixed(2) + '</p>' );
                 vacation.append( details );
                 //vacation.off('click.price');
                 $(this).closest('.vacation').off('click.price');
