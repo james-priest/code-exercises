@@ -17,3 +17,48 @@
 .is-showing-price button {
     display: none;
 }
+div>h2+ul>li {
+    list-style-type: none;
+    background-color: #eee;
+    border: 1px solid #666;
+    display: inline-block;
+    padding: 4px 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+div>h2+ul>li>a {
+    text-decoration: none;
+}
+.disabled {
+    border: 1px solid #ccc;
+}
+.disabled a {
+    color: #ccc;
+}
+.vacation {
+    list-style-type: none;
+    height: 100px;
+    background-color: rgb(252, 235, 252);
+    padding: 10px 10px;
+    /* display: inline-block; */
+    width: 340px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.vacation h3 {
+    margin: 0 0 10px;
+}
+.vacation button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.remove-vacation {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
