@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id='vacations'>
+            <h2>Packages</h2>
+            <ul>
+                <li>
+                    <a href='#' class='show-prices'>Show All Prices</a>
+                </li>
+                <li class="disabled">
+                    <a href='#' class='remove-onsale'>Remove onsale click handler</a>
+                </li>
+            </ul>
+    
+            <ul>
+                <li class="vacation onsale" data-price='399.99'>
+                    <h3>Hawaiian Vacation - onsale</h3>
+                    <button>Show Price</button>
+                    <a href='#' class='remove-vacation'>Not Interested</a>
+                </li>
+                <li class="vacation expiring" data-price='749.99'>
+                    <h3>European Getaway - expiring</h3>
+                    <button>Show Price</button>
+                    <a href='#' class='remove-vacation'>Not Interested</a>
+                </li>
+                <li class="vacation" data-price='859.99'>
+                    <h3>Visit Japan</h3>
+                    <button>Show Price</button>
+                    <a href='#' class='remove-vacation'>Not Interested</a>
+                </li>
+            </ul>
+        </div>
+    
+        <p class="featured">Call us at 555-25937 to make a reservation today!</p>
+
+        <script src='script/jquery.js'></script>
+        <script>           
+            $(document).ready(function() {
+                $('.vacation').priceify( {days: 5} );
+            });
+
+            $.fn.priceify = function(options) { // options will be used below
+                this.each(function() {
+                    var settings = $.extend( { 
+                        days: 3,
+                        vacation: $(this),
+                        price: $(this).data('price')
+                    }, options);
+                    var show = function() {  // separated this event to be called externally
+                        var details = $('<p>Book '+ settings.days + ' days for $ ' +
+                             (settings.days * settings.price).toFixed(2) + '</p>');
+                        settings.vacation.addClass('is-showing-price').append(details);
+                    }
+                    settings.vacation.on('click.priceify', 'button', show);
+                    settings.vacation.on('show.priceify', show);
+                });
+            };
+
+            $('.show-prices').on('click', function(e) {
+                e.preventDefault();
+                $('.vacation').trigger('show.priceify');
+            })
+        </script>
+    </body>
+</html>
