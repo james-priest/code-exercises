@@ -29,6 +29,7 @@ div>h2+ul>li {
 }
 div>h2+ul>li>a {
     text-decoration: none;
+    color:#333;
 }
 .disabled {
     border: 1px solid #ccc;
