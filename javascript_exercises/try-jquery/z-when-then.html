@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body style='padding-top:20px'>
+        <ul class="locations">
+            <li data-loc='london,uk'>
+                London, UK
+                <button>More Info</button>
+                <div class="results"></div>
+            </li>
+    
+            <li data-loc='paris,france'>
+                Paris, France
+                <button>More Info</button>
+                <div class="results"></div>
+            </li>
+    
+            <li data-loc='madrid,spain'>
+                Madrid, Spain
+                <button>More Info</button>
+                <div class="results"></div>
+            </li>
+        </ul>
+    
+        <script src='script/jquery.js'></script>
+        <script src="ajax_shim.js"></script>
+        <script>
+            var WeatherObject = {
+                getWeather: function(location) {
+                    var promise = $.Deferred();
+                    
+                    $.ajax({
+                        url: '/weather',
+                        type: 'get',
+                        data: {q: location},
+                        success: function(result) {
+                            promise.resolve(result.weather);
+                        },
+                        error: function() {
+                            var error = 'invalid location';
+                            promise.reject(error);
+                        }
+                    });
+                    return promise;
+                }
+            };
+
+            var CityObject = {
+                getCity: function(location) {
+                    var promise = $.ajax({
+                        url: '/cities',
+                        type: 'get',
+                        data: { loc: location }
+                    });
+                    return promise;
+                }
+            }
+
+            $( document ).ready( function() {
+                $( 'button' ).on( 'click', function() {
+                    var loc = $( this ).parent().data( 'loc' );
+                    var resultDiv = $( this ).parent().find( '.results' ).empty();
+
+                    $.when(
+                        WeatherObject.getWeather( loc ),
+                        CityObject.getCity( loc )
+                    ).then( function( weatherResult, cityResult) {
+                        resultDiv.append( '<img src="' + cityResult.image + '" />' )
+                            .append( '<h2>' + cityResult.name + '</h2>' )
+                            .append( '<p>' + cityResult.description + '</p>' )
+                            .append( weatherResult );
+                    } );
+                } );
+            } );
+        </script>
+    </body>
+</html>
