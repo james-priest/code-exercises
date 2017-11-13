@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class='favorite'>
+            <h3>Favorite</h3>
+            <img src='images/paris.jpg' />
+            <p class='loc'>Paris, France</p>
+            <p class='weather'></p>
+            <button>Show Weather</button>
+        </div>
+    
+        <script src='script/jquery.js'></script>
+        <script src="ajax_shim.js"></script>
+        <script>           
+            $( document ).ready( function() {
+                $( 'button' ).on( 'click', function() {
+                    var location = $( '.loc' ).text();
+                    $.ajax( {
+                        url: '/weather',
+                        type: 'get',
+                        data: { q: location },
+                        success: function( result ) {
+                            $( '.weather' ).text( result.weather );
+                            console.log( result );
+                        }
+                    } );
+                } );
+            } );
+        </script>
+    </body>
+</html>
