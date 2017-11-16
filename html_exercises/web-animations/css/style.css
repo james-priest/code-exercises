@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+
+.btn {
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    min-width: 140px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    user-select: none; /* User can't highlight the text */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    min-width: 180px;
+    left:0;
+}
