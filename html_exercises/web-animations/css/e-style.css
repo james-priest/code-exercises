@@ -1,0 +1,285 @@
+/* ------------------------------------- */
+/*
+/*  Sweet Lands Styles
+/*
+/*  -- Colors
+/*
+/*  #FFF    (white)
+/*  #333    (gray)
+/*  #999    (gray)
+/*  #DF3894 (pink)
+/*  #9350A0 (purple)
+/*  #00A0D6 (blue)
+/*
+/* ------------------------------------- */
+
+/* ------------------------------------- */
+/*  Imports
+/* ------------------------------------- */
+
+/* Reset */
+
+@import url('normalize.css');
+
+/* Google Fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+
+/* ------------------------------------- */
+/*  Base
+/* ------------------------------------- */
+
+html {
+  background: #FFF;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  font-size: 100%;
+}
+
+body.modal-active {
+  overflow: hidden;
+}
+
+/* Block Content */
+
+ul, p {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+/* Headings */
+
+h1, h2, h3 {
+  font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h2 {
+  font-size: 200%;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+/* Inline Content */
+
+a {
+  color: #00A0D6;
+  text-decoration: none;
+}
+
+a:active, a:focus, a:hover {
+  color: #999;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ------------------------------------- */
+/*  Layout
+/* ------------------------------------- */
+
+.cell {
+  margin: 0 auto;
+  width: 900px;
+}
+
+.well {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-left: 10px;
+}
+
+
+/* ------------------------------------- */
+/*  Button
+/* ------------------------------------- */
+
+.btn {
+    color: whitesmoke;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    min-width: 140px;
+    line-height: 24px;
+    text-align: center;
+    user-select: none; /* User can't highlight the text */
+}
+
+a.btn {
+    height: 24px;
+    padding: 10px 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    min-width: 180px;
+    left:0;
+}
+
+/* ------------------------------------- */
+/*  Button
+/* ------------------------------------- */
+
+.btn {
+    background: #00a0d6;
+    border: 0;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 2.5;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  .btn:active,
+  .btn:focus,
+  .btn:hover {
+    background: #007da7;
+    color: #fff;
+  }
+
+/* ------------------------------------- */
+/*  Form
+/* ------------------------------------- */
+
+.form-submit {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .form-field {
+    border: 0;
+    /* margin: 0; */
+    /* margin-bottom: 20px; */
+    padding: 0;
+
+    position: relative;
+    margin: 0 0 2.5em;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 90%;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    cursor: pointer;
+    line-height: 2.0em;
+  }
+  
+  .form-input {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    /* box-sizing: border-box; */
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    /* padding: 5px; */
+    width: 100%;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    padding: 0 1em;
+    background: #eee;
+  }
+  
+  .form-input:focus {
+    border-color: #00a0d6;
+    outline: 0;
+  }
+  
+
+/* ------------------------------------- */
+/*  Modal
+/* ------------------------------------- */
+
+.modal {
+    background: #fff;
+    border-radius: 20px;
+    left: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+  }
+  
+  .modal h3 {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  .modal-close {
+    font-size: 200%;
+    right: 15px;
+    top: 0;
+    position: absolute;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal-header {
+    background: #eee;
+    padding: 20px 10px;
+  }
+  
+  .modal-overlay {
+    background: HSLA(290, 33%, 47%, 0.90);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* Initial State */
+  /* .modal,
+  .modal-overlay {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 3s;
+  } */
+  
+  /* Active State */
+  /* .modal.active,
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  } */
