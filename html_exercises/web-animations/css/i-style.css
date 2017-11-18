@@ -1,0 +1,36 @@
+body {
+  background-color: #DBF1FC;
+  margin: 100px;
+}
+
+/*
+@keyframes <animation-name> {
+  <step 1> {<property>: <value>;}
+  <step 2> {<property>: <value>;}}
+*/
+
+@keyframes arm-swing {
+  0%, 50%, 100% {transform: rotate(0deg);}
+  25% {transform: rotate(-10deg)}
+  75% {transform: rotate(10deg);}
+}
+@keyframes leg-tap {
+  0%, 100% {transform: translateY(0px);}
+  50% {transform: translateY(15px);}
+}
+
+#left-arm {
+  transform-origin: top right;
+  animation: arm-swing 1s infinite 0s linear;
+}
+#right-arm {
+  transform-origin: top left;
+  animation: arm-swing 1s infinite 0.5s linear;
+}
+
+#left-leg {
+  animation: leg-tap 0.5s infinite;
+}
+#right-leg {
+  animation: leg-tap 0.5s infinite 0.25s;
+}
