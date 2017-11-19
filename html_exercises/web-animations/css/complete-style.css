@@ -100,12 +100,13 @@ body {
   
   #icing-outline {
    animation: shake 3s infinite ease-out;
-   transform-origin: center;
+   /* transform-origin: center; */
+   transform-origin: 302px 337px;
   }
   
   #icing-fill {
    animation: shake 3s infinite ease-out, darken 3s infinite;
-   transform-origin: 306px 306px;
+   transform-origin: 302px 337px;
   }
   
   #left-leg {
