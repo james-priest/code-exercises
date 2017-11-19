@@ -2,7 +2,7 @@
 
 The links below have the HTML and CSS I used as a starting point for following along with the videos.
 
-- CodePen [Buy NOw button](https://codepen.io/alyssamichelle/pen/RNXEgZ)
+- CodePen [Buy Now button](https://codepen.io/alyssamichelle/pen/RNXEgZ)
 - CodePen [Modal form](https://codepen.io/alyssamichelle/pen/WvNaOm?editors=1100)
 - CodePen [Modal Pop-up](https://codepen.io/alyssamichelle/pen/LVBVQN?editors=1000)
 - CodePen [All the timing functions](https://codepen.io/alyssamichelle/pen/GJmpPb)
