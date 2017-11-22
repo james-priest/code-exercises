@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            figure {
+                margin: 20px 10px;
+                /* width: 320px; */
+                font-size: 0.9em;
+            }
+            figure>div.content>div {
+                color:indianred;
+                /* font-size: 0.9em; */
+                border: 1px solid #d1eda6;                
+                min-width: 100px;
+                min-height: 100px;
+                text-align: center;
+                box-sizing: border-box;
+                padding: 4px;
+            }
+            figcaption {
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+            figure>div.content {
+                display: flex;
+            }
+            #start { 
+                justify-content: flex-start;
+            }
+            #end {
+                justify-content: flex-end;
+            }
+            #center {
+                justify-content: center;
+            }
+            #between {
+                justify-content: space-between;
+            }
+            #around {
+                justify-content: space-around;
+            }
+            .clue {
+                order: 1;
+            }
+            .location {
+                order: -1;
+            }
+            .suspect {
+                order: 0
+            }
+        </style>
+    </head>
+    <body>
+        <h1>order: [negative, 0, or positive number] ; justify-content:</h1>
+        <figure>
+            <figcaption><code>flex-start</code></figcaption>
+            <div class="content" id="start">
+                <div class="category clue">Clues</div>
+                <div class="category location">Locations</div>
+                <div class="category suspect">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>flex-end</code></figcaption>
+            <div class="content" id="end">
+                <div class="category clue">Clues</div>
+                <div class="category location">Locations</div>
+                <div class="category suspect">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>center</code></figcaption>
+            <div class="content" id="center">
+                <div class="category clue">Clues</div>
+                <div class="category location">Locations</div>
+                <div class="category suspect">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>space-between</code></figcaption>
+            <div class="content" id="between">
+                <div class="category clue">Clues</div>
+                <div class="category location">Locations</div>
+                <div class="category suspect">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>space-around</code></figcaption>
+            <div class="content" id="around">
+                <div class="category clue">Clues</div>
+                <div class="category location">Locations</div>
+                <div class="category suspect">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+    </body>
+</html>
