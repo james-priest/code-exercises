@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            figure {
+                margin: 20px 10px;
+                font-size: 0.9em;
+            }
+            
+            figcaption {
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+            figure>div.content {
+                display: flex;
+                justify-content: flex-start;
+                /* height: 100px; */
+            }
+            figure>div.content.stretch { 
+                align-items: stretch;
+            }
+            figure>div.content.start {
+                align-items: flex-start;
+            }
+            figure>div.content.end {
+                align-items: flex-end;
+            }
+            figure>div.content.center {
+                align-items: center;
+            }
+            figure>div.content.baseline {
+                align-items: baseline;
+            }
+            figure>div.content>.category {
+                color:indianred;
+                border: 1px solid #d1eda6;                
+                min-width: 100px;
+                text-align: center;
+                box-sizing: border-box;
+                padding: 4px;
+            }
+            figure>div.content>div.category {
+                min-height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>align-items:</h1>
+        <figure>
+            <figcaption><code>stretch</code></figcaption>
+            <div class="content stretch">
+                <div class="category">Clues</div>
+                <a class="category" href=#"">Link button</a>
+                <img src="images/robot.jpg">
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>flex-start</code></figcaption>
+            <div class="content start">
+                <div class="category">Clues</div>
+                <a class="category" href=#"">Link button</a>
+                <img src="images/robot.jpg">
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>flex-end</code></figcaption>
+            <div class="content end">
+                <div class="category">Clues</div>
+                <a class="category" href=#"">Link button</a>
+                <img src="images/robot.jpg">
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>center</code></figcaption>
+            <div class="content center">
+                <div class="category">Clues</div>
+                <a class="category" href=#"">Link button</a>
+                <img src="images/robot.jpg">
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><code>baseline</code></figcaption>
+            <div class="content baseline">
+                <div class="category">Clues</div>
+                <a class="category" href=#"">Link button</a>
+                <img src="images/robot.jpg">
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+    </body>
+</html>
