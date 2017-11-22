@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            figure {
+                margin: 20px 10px;
+                /* width: 320px; */
+                font-size: 0.9em;
+            }
+            figure.clue>div.content>div {
+                color:indianred;
+                /* font-size: 0.9em; */
+                border: 1px solid #d1eda6;                
+                min-width: 100px;
+                min-height: 100px;
+                text-align: center;
+                box-sizing: border-box;
+                padding: 4px;
+            }
+            figcaption {
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+            figure>div.content {
+                display: flex;
+            }
+            .content>div, button {
+                margin: 0 20px;                
+            }
+            #start { 
+                justify-content: flex-start;
+            }
+            #end {
+                justify-content: flex-end;
+            }
+            #center {
+                justify-content: center;
+            }
+            #between {
+                justify-content: space-between;
+            }
+            #around {
+                justify-content: space-around;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>justify-content with Non-flexbox CSS:</h1>
+        <figure class="clue">
+            <figcaption><code>flex-start</code></figcaption>
+            <div class="content" id="start">
+                <div class="category">Clues</div>
+                <div class="category">Locations</div>
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure class="clue">
+            <figcaption><code>flex-end</code></figcaption>
+            <div class="content" id="end">
+                <div class="category">Clues</div>
+                <div class="category">Locations</div>
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure class="clue">
+            <figcaption><code>center</code></figcaption>
+            <div class="content" id="center">
+                <div class="category">Clues</div>
+                <div class="category">Locations</div>
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure class="clue">
+            <figcaption><code>space-between</code></figcaption>
+            <div class="content" id="between">
+                <div class="category">Clues</div>
+                <div class="category">Locations</div>
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+        <figure class="clue">
+            <figcaption><code>space-around</code></figcaption>
+            <div class="content" id="around">
+                <div class="category">Clues</div>
+                <div class="category">Locations</div>
+                <div class="category">Suspects</div>
+                <button type="">my button</button>
+            </div>
+        </figure>
+    </body>
+</html>
