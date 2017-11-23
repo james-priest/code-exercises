@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            h3 {margin-bottom: 0;}
+            figure {
+                margin: 20px 10px;
+                font-size: 0.9em;
+                display: inline-flex;
+                flex-direction: column;
+            }
+            figcaption {
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+            .card {
+                color:indianred;
+                border: 2px solid #d1eda6;
+                border-radius: 10px;
+                padding: 20px;
+                height: 280px;
+                background-color:aliceblue;
+                display: inline-flex;
+                flex-direction: column;
+                /* justify-content: center;                 */
+            }
+            .card.justify-end { justify-content: flex-end; }
+            .card.justify-center { justify-content: center; }
+            .card.justify-between { justify-content: space-between; }
+            .card.justify-around { justify-content: space-around; }
+
+            .card.align-start { align-items: flex-start; }
+            .card.align-end { align-items: flex-end; }
+            .card.align-center { align-items: center; }
+            .card.align-baseline { align-items: baseline; }
+
+            .card h2 { margin: 0; }
+            .card img { border: 1px solid #ccc; margin-bottom: 6px;}
+            .card p { margin:0 0 10px 0; }
+            .card button{ font-size: 0.8em; padding: 4px 10px; border-radius: 4px; }
+        </style>
+    </head>
+    <body>
+    <header></header>
+    <main>
+        <h1>flex-direction: column</h1>
+        <h3>justify-content: flex-start</h3>
+        <figure>
+            <figcaption>align-items: stretch (default)</figcaption>
+            <div class="card">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-start</figcaption>
+            <div class="card align-start">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-end</figcaption>
+            <div class="card align-end">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: center</figcaption>
+            <div class="card align-center">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: baseline</figcaption>
+            <div class="card align-baseline">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <!-- flex-end -->
+        <h3>justify-content: flex-end</h3>
+        <figure>
+            <figcaption>align-items: stretch (default)</figcaption>
+            <div class="card justify-end">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-start</figcaption>
+            <div class="card justify-end align-start">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-end</figcaption>
+            <div class="card justify-end align-end">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: center</figcaption>
+            <div class="card justify-end align-center">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: baseline</figcaption>
+            <div class="card justify-end align-baseline">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <!-- center -->
+        <h3>justify-content: center</h3>
+        <figure>
+            <figcaption>align-items: stretch (default)</figcaption>
+            <div class="card justify-center">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-start</figcaption>
+            <div class="card justify-center align-start">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-end</figcaption>
+            <div class="card justify-center align-end">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: center</figcaption>
+            <div class="card justify-center align-center">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: baseline</figcaption>
+            <div class="card justify-center align-baseline">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <!-- space-between -->
+        <h3>justify-content: space-between</h3>
+        <figure>
+            <figcaption>align-items: stretch (default)</figcaption>
+            <div class="card justify-between">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-start</figcaption>
+            <div class="card justify-between align-start">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-end</figcaption>
+            <div class="card justify-between align-end">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: center</figcaption>
+            <div class="card justify-between align-center">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: baseline</figcaption>
+            <div class="card justify-between align-baseline">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <!-- space-around -->
+        <h3>justify-content: space-around</h3>
+        <figure>
+            <figcaption>align-items: stretch (default)</figcaption>
+            <div class="card justify-around">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-start</figcaption>
+            <div class="card justify-around align-start">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: flex-end</figcaption>
+            <div class="card justify-around align-end">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: center</figcaption>
+            <div class="card justify-around align-center">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+        <figure>
+            <figcaption>align-items: baseline</figcaption>
+            <div class="card justify-around align-baseline">
+                <img src="images/robot.jpg" alt="robot">
+                <h2>Robot</h2>
+                <p>Meet your new robot assistant</p>
+                <button>Download</button>
+            </div>
+        </figure>
+    </main>
+    <footer></footer>
+    </body>
+</html>
