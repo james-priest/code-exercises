@@ -1,0 +1,49 @@
+body {
+    background-color: #744d3f;
+    margin: 0px;
+    font-size: 14px;
+    width: 100%;
+    /* text-align: center; */
+}
+header {
+    text-align: left;
+}
+nav {
+    text-align: center;
+    list-style-type: none;
+    width: 100%;
+    margin: 0 0 3em 0;
+    /* padding: 10%; */
+}
+nav ul {
+    list-style-type: none;
+    cursor: pointer;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block; /* here's the money */
+    /* default value is 'block' which makes the ul span the whole 
+    width of the page. setting 'inline-block' cuts it off at
+    the end of the content (after the last li).
+    */
+}
+nav li {
+    float: left;
+}
+
+nav ul li:hover {
+    background: orange;
+}
+nav ul li a {
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;
+    cursor: pointer;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+main {
+    height: 80vh;
+}
