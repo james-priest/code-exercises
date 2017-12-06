@@ -1,0 +1,23 @@
+/* h1 {
+    font-size: 30px;
+    font-weight: bold;
+} */
+html {
+    font-size: 16px;
+}
+body {
+    color: #352a25;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 62.5% /* 1em = 10px */
+}
+h1 {
+    font-size: 3em; /* 30px/10px */
+    font-weight: bold;
+}
+h1 a {
+    /* font-size: 1.4rem; */
+    font-size: 0.4666667em; /* 14px/30px */
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #6C564B;
+}
