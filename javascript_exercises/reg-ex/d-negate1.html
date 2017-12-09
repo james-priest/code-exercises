@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <script>
+    /**
+     * ^    start delimiter
+     * $    end delimiter
+     * +    one or more times
+     * \s   matches whitespace, tabs, newlines, etc
+     * \w   matches [a-zA-Z0-9_]
+     * .    wildcard that matches any char except newline
+     * \.   backslash escapes the "." for a literal match
+     * ?    makes preceeding pattern optional; /ship?/ matches "shi" 1 time followed by 0 or 1 "p" characters
+     * \?   matches literal "?"
+     * \+   matches literal "+"
+     * ()   can be used to create groups
+     * \b   matches word boundary \bok\b for "ok" but not "okie dokie"
+    */
+    var str = "The rougher the seas, the smthr we sail"; // yes
+    // match anything that doesn't contain the following vowels or space
+    var pattern = /\b[^a^e^i^o^u^y^\s]+\b/;
+
+    var a;
+    if(a = str.match(pattern)) {
+        console.log('match', a);
+    } else {
+        console.log('no match.', a);
+    }
+    </script>
+    </body>
+</html>

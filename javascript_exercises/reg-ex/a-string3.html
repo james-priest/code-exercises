@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    <script>
+    // var chars = "Blackbeard";
+    // var chars = "Captain hook";
+    var chars = "Long John the 3rd";
+
+    var a;
+    /**
+     * Use start delimiter ^
+     * and end delimiter $
+     * to match whole word
+     * \s matches whitespace, tabs, newlines, etc
+     * 
+    */
+    if(a = chars.match(/^[a-z0-9\s]+$/i)) {
+        console.log('match', a);
+    } else {
+        console.log('no match.', a);
+    }
+    </script>
+    </body>
+</html>
