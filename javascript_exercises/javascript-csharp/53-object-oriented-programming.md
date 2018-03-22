@@ -3,14 +3,14 @@
 
 ## 53. JavaScript and object oriented programming
 
-**JavaScript is object oriented programming language. The following are the 4 pillars of any object oriented programming language.** We will discuss examples of these in a later video session.
+**JavaScript is object oriented programming language. The following are the 4 pillars of any object oriented programming language.** We will discuss examples of these in a later lesson.
 
 1. Inheritance
 1. Encapsulation
 1. Abstraction
 1. Polymorphism
 
-In this video let's focus on **creating objects in JavaScript**. Objects in JavaScript can be broadly classified into 2 categories.
+In this lesson let's focus on **creating objects in JavaScript**. Objects in JavaScript can be broadly classified into 2 categories.
 
 1. Standard built-in objects
 1. Custom objects
@@ -75,19 +75,19 @@ document.write(currentDate.getFullYear());
 
 Both the examples above produce the same output
 
-> FirstName = Pragim
-> LastName = Tech
-> FullName = Pragim Tech
+```text
+FirstName = Pragim
+LastName = Tech
+FullName = Pragim Tech
+```
 
 What is the difference between creating an object using constructor function and literal notation.
 
-1. In the constructor function the properties and their values separated using an equal-to sign(=) whereas in the literal version, they are separated using a colon `:`
-1. In constructor function at the end of each property you can have a semi-colons `;` whereas in the literal version properties must be separated with a comma `,`
-1. With literal notation you have already created an object, so to access firstName value you simply use `employee.firstName`. With the constructor function you have to first create an instance and then use the created instance and the property name separated by DOT as shown below.
+1. In the constructor function the properties and their values separated using an equal-to sign(`=`) whereas in the literal version, they are separated using a colon(`:`)
+1. In constructor function at the end of each property you can have a semi-colons(`;`) whereas in the literal version properties must be separated with a comma(`,`)
+1. With literal notation you have already created an object, so to access `firstName` value you simply use `employee.firstName`. With the constructor function you have to first create an instance and then use the created instance and the property name separated by DOT as shown below.
 
     ```js
     var employee = new Employee("Pragim", "Tech");
     employee.firstName
     ```
-
-This is a ==test== of highlighting.
