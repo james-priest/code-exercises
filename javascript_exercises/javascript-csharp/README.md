@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD022 MD033 -->
 # JavaScript Tutorial
-This JavaScript Tutorial series consists of 75 videos published by Pragim Technologies.
+This [JavaScript Tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhUA99nOsJkKXBqokT3MBK0b) series consists of 75 videos published by Pragim Technologies.
 
 It was published from Oct 2014 thru Oct 2015 and covers JavaScript ES5 in the context of ASP.NET. While JavaScript and it's coding conventions have evolved since this series was released, many of the concepts covered are still relevant and applicable today.
 
