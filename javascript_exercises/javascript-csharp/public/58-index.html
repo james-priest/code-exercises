@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Employee(name, age) {
+            var _name = name;
+            var _age = age;
+
+            Object.defineProperty(this, 'age', {
+                get: function () { 
+                    return _age;
+                },
+                set: function (value) {
+                    if (value > 100 || value < 1) {
+                        alert("Invalid age");
+                    } else {
+                        _age = value;
+                    }
+                }
+            });
+
+            Object.defineProperty(this, "name", {
+                get: function () {
+                    return _name;
+                }
+            });
+        }
+
+        var employee = new Employee("Tom", 55);
+        
+        employee.name = "Tommy";    // value of name property will not change (read-only)
+        employee.age = 195;         // Will alert an error - Invalid age
+
+        document.write(employee.name + " " + employee.age); // "Tom 55"
+    </script>
+</body>
+</html>
