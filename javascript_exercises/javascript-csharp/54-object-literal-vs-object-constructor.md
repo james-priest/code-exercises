@@ -27,7 +27,7 @@ document.write(employee.name);
 Output: Mary
 ```
 
-**Objects created using object literals are singletons.** This means when a change is made to the object, it affects that object across the entire script.
+**Objects created using object literals are singletons.** This means when a change is made to the object, it effects that object across the entire script.
 
 ### Creating an object using constructor function
 
