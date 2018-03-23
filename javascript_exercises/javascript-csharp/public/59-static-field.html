@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>static field</title>
+</head>
+<body>
+    <script>
+        function Circle(radius) {
+            // Instance field
+            this.Radius = radius;
+
+            // Static field
+            Circle.PI = 3.141;
+
+            this.CalculateArea = function() {
+                return Circle.PI * this.Radius * this.Radius;
+            };
+        }
+
+        var circleObject = new Circle(10);
+        document.write('Area = ' + circleObject.CalculateArea());
+    </script>
+</body>
+</html>
