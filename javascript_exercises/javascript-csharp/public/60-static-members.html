@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>static members</title>
+</head>
+<body>
+    <script>
+        function Employee(name) {
+            // public instance field
+            this.name = name;
+            // static field
+            Employee.count = ++Employee.count || 1;
+
+            // privileged method (not efficient)
+            this.getName = function() {
+                return this.name;
+            };
+            // static method
+            Employee.getCount = function() {
+                return Employee.count;
+            };
+            
+        }
+
+        var e1 = new Employee("Mark");
+        var e2 = new Employee("Sara");
+
+        document.write("e1.name = " + e1.getName() + "<br/>");
+        document.write("e2.name = " + e2.getName() + "<br/>");
+
+        document.write('count:', Employee.getCount());
+    </script>
+</body>
+</html>
