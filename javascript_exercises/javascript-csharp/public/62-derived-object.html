@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prototype method</title>
+</head>
+<body>
+    <script>
+        // Employee will be the base object (Similar to base class in c#)
+        var Employee = function (name) {
+            this.name = name;
+        };
+
+        // getName() function is added to the base object (Employee)
+        Employee.prototype.getName = function () {
+            return this.name;
+        };
+
+        // PermanentEmployee will be the derived object
+        var PermanentEmployee = function (annualSalary) {
+            this.annualSalary = annualSalary;
+        };
+
+        // Use prototype to associate Employee as the base object for PermanentEmployee
+        PermanentEmployee.prototype = new Employee("Mark");
+
+        var pe = new PermanentEmployee(50000);
+        // Derived object (permanentEmployee) can see the
+        // base object (Employee) getName() method
+        document.write(pe.getName() + '<br>');
+
+        document.write('pe instanceof Employee: ' + (pe instanceof Employee) + '<br>'); // Returns true
+        document.write('pe instanceof PermanentEmployee: ' + (pe instanceof PermanentEmployee)); // Returns true
+    </script>
+</body>
+</html>

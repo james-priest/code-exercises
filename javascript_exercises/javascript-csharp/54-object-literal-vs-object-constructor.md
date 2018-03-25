@@ -32,17 +32,17 @@ Output: Mary
 ### Creating an object using constructor function
 
 ```js
-var emp = function () {
+var Emp = function () {
     this.name = "John";
 }
 
 // Create an instance of employee
 // employee.name will return John
-var employee = new emp();
+var employee = new Emp();
 
 // Create an other instance of employee
 // newEmployee.name will return John
-var newEmployee = new emp();
+var newEmployee = new Emp();
 
 // Change the name property of the newEmployee object
 newEmployee.name = "Mary";
@@ -54,7 +54,11 @@ document.write(employee.name);
 
 > Output : John
 
-**Objects defined with a function constructor lets you have multiple instances of that object.** This means changes made to one instance, will not affect other instances.
+**Objects defined with the `new` keyword are created with the function acting as constructor function. Constructors function lets you have multiple instances of that object.** This means changes made to one instance, will not affect other instances.
+
+If a function invocation is preceded with the **new** keyword, it is a constructor invocation.
+
+> Note: It's good practice to name constructor functions with an upper-case first letter. (e.g. `Emp`)
 
 ### When to use one over the other
 If you need **multiple instances** of the object **use constructor function** where as if you need just **one instance** of the object then **use literal notation**.

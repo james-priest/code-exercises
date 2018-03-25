@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prototype method</title>
+</head>
+<body>
+    <script>
+        var Employee = function (name) {
+            this.name = name;
+        };
+
+        var PermanentEmployee = function (annualSalary) {
+            this.annualSalary = annualSalary;
+        };
+
+        var employee = new Employee("Mark");
+
+        PermanentEmployee.prototype = employee;
+        // PermanentEmployee.prototype.constructor = PermanentEmployee;
+
+        var pe = new PermanentEmployee(50000);
+
+        document.write("Employee.name: " +
+                        employee.hasOwnProperty('name') + "<br/>");
+        document.write("Employee.annualSalary: " +
+                        employee.hasOwnProperty('annualSalary') + "<br/><br/>");
+
+        document.write("PermanentEmployee.name: " +
+                        pe.hasOwnProperty('name') + "<br/>");
+        document.write("PermanentEmployee.annualSalary: " +
+                        pe.hasOwnProperty('annualSalary') + "<br/>");
+    </script>
+</body>
+</html>
