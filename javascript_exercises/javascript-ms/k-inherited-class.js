@@ -26,7 +26,10 @@ var Vehicle = ( function() {
 } )();
 
 var Car = (function( parent ) {
-    Car.prototype = new Vehicle();
+    Car.prototype = new Vehicle(); // note: this pattern is deprecated!
+    // The modern way to do this is with Object.create(), which was added in ECMAScript 5
+    // Car.prototype = Object.create(Vehicle.prototype);
+
     Car.prototype.constructor = Car;
     function Car( year, make, model ) {
         parent.call( this, year, make, model );
@@ -40,7 +43,7 @@ var Car = (function( parent ) {
 
 var Boat = (function( parent ) {
     Boat.prototype = new Vehicle();
-    Boat.prototype.constructor = Car;
+    Boat.prototype.constructor = Boat;
     function Boat( year, make, model ) {
         parent.call( this, year, make, model );
         this.propellerBladeQuantity = 3;
