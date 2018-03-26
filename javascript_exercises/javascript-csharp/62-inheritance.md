@@ -6,7 +6,9 @@ In this lesson we will discuss **Inheritance in JavaScript** with an example.
 
 Object oriented programming languages support inheritance. Since JavaScript is also an object oriented programming language, it supports inheritance.
 
-In object-oriented programming, languages like C# and Java implement inheritance when a *class* inherits from another *class*. In JavaScript, we don't have a traditional class inheritance model. Instead, **JavaScript inheritance is prototype-based**. This means to implement inheritance in JavaScript, an *object* inherits from another *object*. Let us understand this with an example.
+In object-oriented programming, languages like C# and Java implement inheritance when a *class* inherits from another *class*.
+
+In JavaScript, we don't have a traditional class inheritance model. Instead, **JavaScript inheritance is prototype-based**. This means that to implement inheritance in JavaScript, an *object* inherits from another *object*. Let us understand this with an example.
 
 ```html
 <script type="text/javascript">
