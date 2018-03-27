@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object reflection 1</title>
+</head>
+<body>
+    <h1>Sample 1</h1>
+    <pre><code id="code1"></code></pre>
+
+    <h2>Output 1a</h2>
+    <pre><code id="output1a"></code></pre>
+
+    <h2>Output 1b</h2>
+    <pre><code id="output1b"></code></pre>
+
+    <script type="text/javascript" id="js1">
+        var Employee = function (firstName, lastName, gender, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.gender = gender;
+            this.email = email;
+        };
+
+        Employee.prototype.getFullName = function () {
+            return this.firstName + " " + this.lastName;
+        };
+
+        Employee.prototype.getEmail = function () {
+            return this.email;
+        };
+
+        Employee.prototype.getGender = function () {
+            return this.gender;
+        };
+
+        var employee1 = new Employee("Mark", "Matt", "Male", "a@a.com");
+
+        // output 1a
+        for (let property in employee1) {
+            document.getElementById('output1a').innerHTML += '    ' + property + '\n';
+        }
+
+        // output 1b (filter with `hasOwnProperty()` check)
+        for (let property in employee1) {
+            if(employee1.hasOwnProperty(property)) {
+                document.getElementById('output1b').innerHTML += '    ' + property + '\n';
+            }
+        }
+    </script>
+<script>
+    document.getElementById('code1').innerHTML = document.getElementById('js1').textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+</script>
+</body>
+</html>

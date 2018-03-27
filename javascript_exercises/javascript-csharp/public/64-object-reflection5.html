@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object reflection 5</title>
+</head>
+<body>
+    <h1>Sample 5</h1>
+    <pre><code id="code1"></code></pre>
+
+    <h2>Output 5</h2>
+    <pre><code id="output1"></code></pre>
+
+    <script id="js1">
+        var Employee = function (firstName, lastName, gender, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.gender = gender;
+            this.email = email;
+        };
+
+        Employee.prototype.getFullName = function () {
+            return this.firstName + " " + this.lastName;
+        };
+
+        Employee.prototype.getEmail = function () {
+            return this.email;
+        };
+
+        Employee.prototype.getGender = function () {
+            return this.gender;
+        };
+
+        var employee1 = new Employee("Mark", "Matt", "Male", "a@a.com");
+        var PermanentEmployee = function (annualSalry) {
+            this.annualSalary = annualSalry;
+        };
+
+        PermanentEmployee.prototype = employee1;
+
+        var pe = new PermanentEmployee(50000);
+
+        for (var property in pe) {
+            document.getElementById('output1').innerHTML += '    ' + 
+            property + ': ' +
+            pe[property] + '\n';
+        }
+    </script>
+<script>
+    document.getElementById('code1').innerHTML = document.getElementById('js1').textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+</script>
+</body>
+</html>

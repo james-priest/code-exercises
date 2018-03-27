@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object reflection 3</title>
+</head>
+<body>
+    <h1>Sample 3</h1>
+    <pre><code id="code1"></code></pre>
+
+    <h2>Output 3</h2>
+    <pre><code id="output1"></code></pre>
+
+    <script id="js1">
+        var Employee = function (firstName, lastName, gender, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.gender = gender;
+            this.email = email;
+        };
+
+        Employee.prototype.getFullName = function () {
+            return this.firstName + " " + this.lastName;
+        };
+
+        Employee.prototype.getEmail = function () {
+            return this.email;
+        };
+
+        Employee.prototype.getGender = function () {
+            return this.gender;
+        };
+
+        var employee1 = new Employee("Mark", "Matt", "Male", "a@a.com");
+
+        for (var property in employee1) {
+            if (typeof employee1[property] != "function") {
+                document.getElementById('output1').innerHTML += '    ' + 
+                property + ': ' +
+                employee1[property] + '\n';
+            }
+        }
+    </script>
+<script>
+    document.getElementById('code1').innerHTML = document.getElementById('js1').textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+</script>
+</body>
+</html>

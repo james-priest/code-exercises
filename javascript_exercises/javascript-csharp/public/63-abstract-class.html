@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>abstract class</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Create a Shape object which is abstract
+        var Shape = function () {
+            this.shapeName = "None";
+            throw new Error("Cannot create an instance of abstract class");
+        };
+    
+        // Error : Cannot create an instance of abstract class
+        // var shape = new Shape();
+    
+        // Add draw function to the Shape prototype
+        // Objects derived from Shape should be able to call draw() method
+        Shape.prototype.draw = function () {
+            return "Drawing " + this.shapeName;
+        };
+    
+        // Create a Circle object
+        var Circle = function (shapeName) {
+            this.shapeName = shapeName;
+        };
+    
+        // Make shape the parent for Circle
+        // Object.create() allows to create an object without using constructor
+        Circle.prototype = Object.create(Shape.prototype);
+    
+        var circle = new Circle("Circle");
+        // Since Circle inherits from abstract Shape object, it can call draw() method
+        document.write(circle.draw() + "<br>");
+    
+        document.write("circle instanceof Circle: " + (circle instanceof Circle) + "<br>"); // Returns true
+        document.write("circle instanceof Shape: " + (circle instanceof Shape));  // Returns true
+    </script>
+</body>
+</html>
