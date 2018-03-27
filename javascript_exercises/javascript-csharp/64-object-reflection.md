@@ -67,6 +67,8 @@ getEmail
 getGender
 ```
 
+[Object Reflection - Live Sample 1](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection1.html)
+
 ### Sample 2
 
 The following code retrieves all the **public properties & functions of the Employee object along with their values**.
@@ -91,11 +93,14 @@ getEmail: function () { return this.email; }
 getGender: function () { return this.gender; }
 ```
 
+[Object Reflection - Live Sample 2](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection2.html)
+
 ### Sample 3
 
 The following code retrieves only the public properties of the Employee object.
 
 **Code 3**
+
 ```js
 for (var property in employee) {
     if (typeof employee[property] != "function") {
@@ -112,6 +117,8 @@ lastName : Matt
 gender : Male
 email : a@a.com
 ```
+
+[Object Reflection - Live Sample 3](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection3.html)
 
 ### Sample 4
 
@@ -134,6 +141,8 @@ getFullName : function () { return this.firstName + " " + this.lastName; }
 getEmail : function () { return this.email; }
 getGender : function () { return this.gender; }
 ```
+
+[Object Reflection - Live Sample 4](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection4.html)
 
 ### Sample 5
 
@@ -170,6 +179,8 @@ getEmail : function () { return this.email; }
 getGender : function () { return this.gender; }
 ```
 
+[Object Reflection - Live Sample 5](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection5.html)
+
 ### Sample 6
 
 In this example, we are using `hasOwnProperty()` method to determine if a property is defined on the actual object or it's prototype. This method returns `true` if the property is defined by the object itself, otherwise `false`.
@@ -191,6 +202,8 @@ for (var property in pe) {
 ```text
 annualSalary : 50000
 ```
+
+[Object Reflection - Live Sample 6](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection6.html)
 
 ### Sample 7
 
@@ -217,3 +230,5 @@ getFullName : function () { return this.firstName + " " + this.lastName; }
 getEmail : function () { return this.email; }
 getGender : function () { return this.gender; }
 ```
+
+[Object Reflection - Live Sample 7](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection7.html)
