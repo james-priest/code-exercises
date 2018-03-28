@@ -62,6 +62,8 @@ e1.name = MARK
 e2.name = SARA
 ```
 
+**Live Sample:** [61-override-function1.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/61-override-function1.html)
+
 In this example, all the JavaScript is in the same file. i.e
 
 1. The JavaScript that creates Employee constructor function and `getName()` function
@@ -108,6 +110,8 @@ The JavaScript that creates Employee constructor function and `getName()` functi
     </html>
     ```
 
+**Live Sample:** [61-override-function2.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/61-override-function2.html)
+
 Run the page and the output should be exactly the same as the previous example.
 
 JavaScript built-in methods can also be overridden. The following example overrides the built-in JavaScript `alert()` function.
@@ -129,3 +133,5 @@ JavaScript built-in methods can also be overridden. The following example overri
 ```text
 Output : Hello JavaScript
 ```
+
+**Live Sample:** [61-override-alert.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/61-override-alert.html)

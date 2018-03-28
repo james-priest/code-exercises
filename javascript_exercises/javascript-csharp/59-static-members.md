@@ -50,6 +50,8 @@ var circleObject = new Circle(10);
 document.write('Area = ' + circleObject.CalculateArea());
 ```
 
+**Live Sample:** [59-static-field.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/59-static-field.html)
+
 ### Points to remember
 
 1. Define a static member using the name of the constructor function.
@@ -77,9 +79,11 @@ function Shape(shapeName) {
 
 var shape1 = new Shape('Circle');
 var shape2 = new Shape('Rectangle');
-var shape3 = new Shape('triangle');
+var shape3 = new Shape('Triangle');
 
 document.write('Shape.Count = ' + Shape.ShowCount());
 ```
+
+**Live Sample:** [59-static-method.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/59-static-method.html)
 
 Since we have created 3 shapes, the output will be 3.

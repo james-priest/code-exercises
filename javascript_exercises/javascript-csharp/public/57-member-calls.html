@@ -7,7 +7,11 @@
     <title>private members</title>
 </head>
 <body>
-    <script>
+    <h1>Constructor function</h1>
+    <pre><code id="code1"></code></pre>
+
+    <h1>Result</h1>
+    <script id="js1">
         function Employee(firstName, lastName) {
             // Private Field
             var privateFullName;
@@ -34,17 +38,29 @@
         }
 
         var employee = new Employee("Tom", "Grover");
+        </script>
+
+        <script>
+        document.getElementById('code1').innerHTML = document.getElementById('js1').textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
         // Calling public function works fine
-        document.write(employee.publicGetFullName() + "<br/>");
+        document.write('<b>Calling public function</b>' + "<br/>");
+        document.write('employee.publicGetFullName(): ');
+        document.write(employee.publicGetFullName() + "<br/><br/>");
 
         // Calling Privileged function works fine
-        document.write(employee.privilegedGetFullName() + "<br/>");
+        document.write('<b>Calling Privileged function</b>' + "<br/>");
+        document.write('employee.privilegedGetFullName(): ');
+        document.write(employee.privilegedGetFullName() + "<br/><br/>");
 
         // Calling private method - Uncaught TypeError
-        employee.privateGetFullName();
+        document.write('<b>Calling private method</b>' + "<br/>");
+        document.write('employee.privateGetFullName(): Uncaught TypeError'+ "<br/><br/>");
+        // employee.privateGetFullName();
 
         // Calling private field - undefined
+        document.write('<b>Calling private field</b>' + "<br>");
+        document.write('employee.privateFullName: undefined');
         employee.privateFullName;
     </script>
 </body>

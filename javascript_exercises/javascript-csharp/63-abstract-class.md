@@ -86,3 +86,5 @@ Add a new HTML page to the project. Name it HTMLPage1.htm. Copy and paste the fo
     alert(circle instanceof Shape);  // Returns true
 </script>
 ```
+
+**Live Sample:** [63-abstract-class.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/63-abstract-class.html)

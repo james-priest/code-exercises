@@ -99,3 +99,5 @@ On any given HTML page you should be able to access both the versions of custome
     </body>
 </html>
 ```
+
+**Live Sample:** [56-index.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/56-index.html)

@@ -67,7 +67,7 @@ getEmail
 getGender
 ```
 
-[Object Reflection - Live Sample 1](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection1.html)
+**Live Sample:** [64-object-reflection1.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection1.html)
 
 ### Sample 2
 
@@ -93,7 +93,7 @@ getEmail: function () { return this.email; }
 getGender: function () { return this.gender; }
 ```
 
-[Object Reflection - Live Sample 2](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection2.html)
+**Live Sample:** [64-object-reflection2.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection2.html)
 
 ### Sample 3
 
@@ -118,7 +118,7 @@ gender : Male
 email : a@a.com
 ```
 
-[Object Reflection - Live Sample 3](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection3.html)
+**Live Sample:** [64-object-reflection3.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection3.html)
 
 ### Sample 4
 
@@ -142,7 +142,7 @@ getEmail : function () { return this.email; }
 getGender : function () { return this.gender; }
 ```
 
-[Object Reflection - Live Sample 4](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection4.html)
+**Live Sample:** [64-object-reflection4.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection4.html)
 
 ### Sample 5
 
@@ -179,7 +179,7 @@ getEmail : function () { return this.email; }
 getGender : function () { return this.gender; }
 ```
 
-[Object Reflection - Live Sample 5](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection5.html)
+**Live Sample:** [64-object-reflection5.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection5.html)
 
 ### Sample 6
 
@@ -203,7 +203,7 @@ for (var property in pe) {
 annualSalary : 50000
 ```
 
-[Object Reflection - Live Sample 6](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection6.html)
+**Live Sample:** [64-object-reflection6.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection6.html)
 
 ### Sample 7
 
@@ -231,4 +231,4 @@ getEmail : function () { return this.email; }
 getGender : function () { return this.gender; }
 ```
 
-[Object Reflection - Live Sample 7](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection7.html)
+**Live Sample:** [64-object-reflection7.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection7.html)

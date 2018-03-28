@@ -82,10 +82,12 @@ employee.privateGetFullName();      // Calling private method - Uncaught TypeErr
 employee.privateFullName;           // Calling private field - undefined error
 ```
 
+**Live Sample:** [57-member-calls.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/57-member-calls.html)
+
 **Can we modify a private field outside of the constructor function?**
 Straight answer, no you can't.
 
-In the example below, when we call the private field `employee.privateFullName`, it results in undefined error. On the next line we are adding a new public field with same name as the private field to the employee object. Is this going to change the private field (privateFullName). The answer is NO. You cannot access or modify private fields outside of the object. In this example, you are just adding new public field (employee.privateFullName) to the employee object.
+In the example below, when we call the private field `employee.privateFullName`, it results in `undefined` error. On the next line we are adding a new public field with same name as the private field to the employee object. Is this going to change the private field (privateFullName). The answer is NO. You cannot access or modify private fields outside of the object. In this example, you are just adding new public field (employee.privateFullName) to the employee object.
 
 ```js
 var employee = new Employee("Tom", "Grover");

@@ -40,6 +40,8 @@ In JavaScript, we don't have a traditional class inheritance model. Instead, **J
 </script>
 ```
 
+**Live Sample:** [62-derived-object.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/62-derived-object.html)
+
 Notice that the derived object (PermanentEmployee) can see the base object (Employee) `getName()` method. When `getName()` method is called, JavaScript first tries to find this method in the derived object. If it can't find the method there, it goes up the chain to the parent object and finds it there.
 
 If you add a new method to the parent object, it becomes available in the derived object.
@@ -69,9 +71,11 @@ If you add a new method to the parent object, it becomes available in the derive
 
     var pe = new PermanentEmployee(50000);
     // Call getNameLength() method added to the parent object
-    document.write(pe.getNameLength()); // Output : 4 characters
+    document.write(pe.getNameLength()); // Output: 4 characters
 </script>
 ```
+
+**Live Sample:** [62-derived-object2.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/62-derived-object2.html)
 
 Use `hasOwnProperty()` method to determine if a property is defined on the actual object or it's prototype. Here is an example.
 
@@ -103,11 +107,14 @@ Use `hasOwnProperty()` method to determine if a property is defined on the actua
 </script>
 ```
 
+**Output**
+
 ```text
-Output :
 Employee.name: true
 Employee.annualSalary: false
 
 PermanentEmployee.name: false
 PermanentEmployee.annualSalary: true
 ```
+
+**Live Sample:** [62-hasOwn.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/62-hasOwn.html)

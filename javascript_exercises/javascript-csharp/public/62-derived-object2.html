@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prototype method</title>
+</head>
+<body>
+    <script>
+        var Employee = function (name) {
+            this.name = name;
+        };
+
+        Employee.prototype.getName = function () {
+            return this.name;
+        };
+
+        // Adding getNameLength() method to the parent object
+        // which becomes available in the derived object
+        Employee.prototype.getNameLength = function () {
+            return this.name.length + " characters";
+        };
+
+        // PermanentEmployee will be the derived object
+        var PermanentEmployee = function (annualSalary) {
+            this.annualSalary = annualSalary;
+        };
+
+        // Use prototype to associate Employee as the base object for PermanentEmployee
+        PermanentEmployee.prototype = new Employee("Mark");
+
+        var pe = new PermanentEmployee(50000);
+        // Call getNameLength() method added to the parent object
+        document.write(pe.getNameLength()); // Output: 4 characters
+    </script>
+</body>
+</html>

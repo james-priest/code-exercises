@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>override alert</title>
+</head>
+<body>
+    <script>
+        // Overriding JavaScript alert function to write to the page
+        // instead of displaying the alert dialog box
+        var alert = function (msg) {
+            document.write(msg);
+        };
+
+        // The following calls will invoke the overridden alert() method   
+        alert("Hello");
+        window.alert(" JavaScript");
+    </script>
+</body>
+</html>

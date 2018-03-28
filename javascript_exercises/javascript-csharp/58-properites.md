@@ -86,3 +86,5 @@ employee.age = 195;         // Will alert an error - Invalid age
 
 document.write(employee.name + " " + employee.age); // "Tom 55"
 ```
+
+**Live Sample:** [58-properties.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/58-properties.html)
