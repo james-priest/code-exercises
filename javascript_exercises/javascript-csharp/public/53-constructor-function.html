@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>constructor function</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Constructor function
+            function Employee(firstName, lastName)
+            {
+                this.firstName = firstName;
+                this.lastName = lastName;
+        
+                this.getFullName = function ()
+                {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+        
+            var employee = new Employee("Pragim", "Tech");
+        
+            document.write("FirstName = " + employee.firstName + "<br/>");
+            document.write("LastName = " + employee.lastName + "<br/>");
+            document.write("FullName = " + employee.getFullName() + "<br/>");
+        </script>
+    </body>
+</html>

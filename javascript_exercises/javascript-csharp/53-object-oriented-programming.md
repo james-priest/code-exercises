@@ -32,13 +32,11 @@ document.write(currentDate.getFullYear());
 ```html
 <script type="text/javascript">
     // Constructor function
-    function Employee(firstName, lastName)
-    {
+    function Employee(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
 
-        this.getFullName = function ()
-        {
+        this.getFullName = function () {
             return this.firstName + " " + this.lastName;
         }
     }
@@ -51,27 +49,29 @@ document.write(currentDate.getFullYear());
 </script>
 ```
 
+**Live Sample:** [53-constructor-function.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/53-constructor-function.html)
+
 ### Creating an object in JavaScript using literal notation
 
 ```html
 <script type="text/javascript">
     // Object literal notation
-    var employee =
-    {
+    var employee = {
         firstName: "Pragim",
         lastName: "Tech",
 
-        getFullName: function ()
-        {
+        getFullName: function () {
             return this.firstName + " " + this.lastName;
         }
-    }
+    };
 
     document.write("FirstName = " + employee.firstName + "<br/>");
     document.write("LastName = " + employee.lastName + "<br/>");
     document.write("FullName = " + employee.getFullName() + "<br/>");
 </script>
 ```
+
+**Live Sample:** [53-literal-notation.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/53-literal-notation.html)
 
 Both the examples above produce the same output
 

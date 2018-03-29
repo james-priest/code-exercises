@@ -10,7 +10,7 @@ In this lesson we will discuss the main **difference between objects created usi
 ```js
 var employee = {
     name: "John"
-}
+};
 
 // Create a new variable and assign the employee object
 var newEmployee = employee;
@@ -23,6 +23,8 @@ newEmployee.name = "Mary";
 document.write(employee.name);
 ```
 
+**Live Sample:** [54-literal-notation.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/54-literal-notation.html)
+
 ```text
 Output: Mary
 ```
@@ -34,7 +36,7 @@ Output: Mary
 ```js
 var Emp = function () {
     this.name = "John";
-}
+};
 
 // Create an instance of employee
 // employee.name will return John
@@ -52,7 +54,11 @@ newEmployee.name = "Mary";
 document.write(employee.name);
 ```
 
-> Output : John
+**Live Sample:** [54-constructor-function.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/54-constructor-function.html)
+
+```text
+Output : John
+```
 
 **Objects defined with the `new` keyword are created with the function acting as constructor function. Constructors function lets you have multiple instances of that object.** This means changes made to one instance, will not affect other instances.
 

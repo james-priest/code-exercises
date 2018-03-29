@@ -10,5 +10,5 @@ PragimTech.TeamB.customer = function (firstName, middleName, lastName) {
         return this.firstName + " " + this.middleName + " " + this.lastName;
     };
 
-    return this;
+    console.log(this); // {customer: f, firstName: "Tom", middleName: "T", lastName: "Grover", getFullName: f}
 };

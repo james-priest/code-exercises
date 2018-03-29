@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>constructor function</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // constructor function
+            var Emp = function () {
+                this.name = "John";
+            };
+
+            // Create an instance of employee
+            // employee.name will return John
+            var employee = new Emp();
+
+            // Create an other instance of employee
+            // newEmployee.name will return John
+            var newEmployee = new Emp();
+
+            // Change the name property of the newEmployee object
+            newEmployee.name = "Mary";
+
+            // Retrieve the name property from the original employee object
+            // Notice that name is not changed to Mary, it is still John
+            document.write(employee.name);
+        </script>
+    </body>
+</html>

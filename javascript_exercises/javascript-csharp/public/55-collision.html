@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>global namespace function collision</title>
+        <script type="text/javascript" src="55-TeamA.js" ></script>
+        <script type="text/javascript" src="55-TeamB.js" ></script>
+    </head>
+    <body>
+        <div id="resultDiv"></div>
+
+        <script type="text/javascript">
+            var customer1 = new customer('Tom', 'Grover');
+            document.getElementById('resultDiv').innerHTML = customer1.getFullName();
+        </script>
+    </body>
+</html>

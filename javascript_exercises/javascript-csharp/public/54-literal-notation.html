@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>literal notation</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Object literal notation
+            var employee = {
+                name: "John"
+            };
+
+            // Create a new variable and assign the employee object
+            var newEmployee = employee;
+
+            // Change the name property of the employee object using the new variable
+            newEmployee.name = "Mary";
+
+            // Retrieve the name property from the original employee object
+            // Notice that name is changed to Mary
+            document.write(employee.name);
+        </script>
+    </body>
+</html>

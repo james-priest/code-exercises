@@ -33,7 +33,8 @@ PragimTech.TeamA.customer = function (firstName, lastName) {
         return this.firstName + " " + this.lastName;
     };
 
-    return this;
+    console.log(this);
+    // {customer: f, firstName: "Tom", lastName: "Grover", getFullName: f}
 };
 ```
 
@@ -64,7 +65,8 @@ PragimTech.TeamB.customer = function (firstName, middleName, lastName) {
         return this.firstName + " " + this.middleName + " " + this.lastName;
     };
 
-    return this;
+    console.log(this);
+    // {customer: f, firstName: "Tom", middleName: "T", lastName: "Grover", getFullName: f}
 };
 ```
 
@@ -90,8 +92,8 @@ On any given HTML page you should be able to access both the versions of custome
     </head>
     <body>
         <script type="text/javascript">
-            var cust1 = PragimTech.TeamA.customer("Tom", "Grover");
-            var cust2 = PragimTech.TeamB.customer("Tom", "T", "Grover");
+            var cust1 = new PragimTech.TeamA.customer("Tom", "Grover");
+            var cust2 = new PragimTech.TeamB.customer("Tom", "T", "Grover");
 
             document.writeln(cust1.getFullName() + '<br>');
             document.writeln(cust2.getFullName());
@@ -100,4 +102,4 @@ On any given HTML page you should be able to access both the versions of custome
 </html>
 ```
 
-**Live Sample:** [56-index.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/56-index.html)
+**Live Sample:** [56-namespaces.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/56-namespaces.html)
