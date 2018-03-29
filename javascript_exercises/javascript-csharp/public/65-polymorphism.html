@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>constructor function</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Shape object is be the base object
+            var Shape = function () { };
+
+            // Add draw function to the Shape prototype
+            // Objects derived from Shape will be able to override the draw() method
+            Shape.prototype.draw = function () {
+                return "I am a generic shape";
+            };
+
+            // Create a Circle object
+            var Circle = function () { }
+
+            // Make shape the parent for Circle
+            Circle.prototype = Object.create(Shape.prototype);
+
+            // Circle object overrides draw() method
+            Circle.prototype.draw = function () {
+                return "I am a circle";
+            };
+
+            var Square = function () { };
+            Square.prototype = Object.create(Shape.prototype);
+            Square.prototype.draw = function () {
+                return "I am a square";
+            };
+
+            var Triangle = function () { };
+            Triangle.prototype = Object.create(Shape.prototype);
+
+            var shapes = [new Shape(), new Circle(), new Square(), new Triangle()];
+
+            shapes.forEach( function(shape) {
+                document.write(shape.draw() + "<br/>");
+                console.log(shape);
+            });
+        </script>
+    </body>
+</html>
