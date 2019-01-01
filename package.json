@@ -1,13 +1,16 @@
 {
   "name": "code-exercises",
   "version": "1.0.0",
-  "description": "Exercises, type-alongs, & proof of concepts from various books, labs, tutorials, blog posts and online courses.",
+  "description": "Exercises, code-along, & proof of concepts from various books, labs, tutorials, blog posts and online courses.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/flow-remove-types javascript_exercises/flow/src -d javascript_exercises/flow/lib",
     "prepublish": "npm run build",
-    "flow": "flow"
+    "flow": "flow",
+    "install-deps": "npm i -D babel-eslint eslint eslint-config-prettier eslint-plugin-html eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react  prettier-eslint prettier-eslint-cli",
+    "rm-deps": "npm rm -D babel-eslint eslint eslint-config-prettier eslint-plugin-html eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react  prettier-eslint prettier-eslint-cli",
+    "fix-code": "prettier-eslint --write './javascript_exercises/fcc/basic-js/lint-test.js' ",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "repository": {
     "type": "git",
@@ -21,20 +24,12 @@
   },
   "homepage": "https://github.com/james-priest/code-exercises#readme",
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb-base": "^11.3.0",
-    "eslint-config-p5js": "^1.0.1",
-    "eslint-plugin-import": "^2.14.0",
     "flow-bin": "^0.50.0",
     "flow-remove-types": "^1.2.1",
-    "tape": "^4.8.0",
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
+    "tape": "^4.8.0"
   },
   "dependencies": {
     "ejs": "^2.5.7",
-    "eslint-plugin-html": "^4.0.2",
     "express": "^4.16.2",
     "formidable": "^1.1.1",
     "jquery": "^3.2.1",
